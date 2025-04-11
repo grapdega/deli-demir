@@ -1,20 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://qqwfi0hl7del"]
+[gd_scene load_steps=9 format=3 uid="uid://qqwfi0hl7del"]
 
 [ext_resource type="Script" uid="uid://csg2hi1qbo2st" path="res://sahneler/oyuncu/oyuncu.gd" id="1_xq5k3"]
-[ext_resource type="Texture2D" uid="uid://bg1noia2rfi3k" path="res://kaynak/resim/cevdet.png" id="2_mhvpp"]
+[ext_resource type="Texture2D" uid="uid://bih8qgnheuux5" path="res://kaynak/resim/cevdet-idle.png" id="2_mhvpp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6wtns"]
+atlas = ExtResource("2_mhvpp")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_25cv5"]
+atlas = ExtResource("2_mhvpp")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqlhi"]
+atlas = ExtResource("2_mhvpp")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8825k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6wtns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_25cv5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqlhi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wtns"]
-radius = 6.0
-height = 16.0
+radius = 7.0
+height = 14.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mhvpp"]
+size = Vector2(19, 14)
 
 [node name="Oyuncu" type="CharacterBody2D"]
 script = ExtResource("1_xq5k3")
 
-[node name="Icon" type="Sprite2D" parent="."]
-texture = ExtResource("2_mhvpp")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8825k")
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 0)
 shape = SubResource("CapsuleShape2D_6wtns")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(48, -1)
+position = Vector2(48, -29)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["attack"]]
+position = Vector2(7.5, 0)
+shape = SubResource("RectangleShape2D_mhvpp")
+disabled = true

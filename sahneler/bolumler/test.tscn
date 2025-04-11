@@ -1,27 +1,77 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbe2tvi20m4xi"]
+[gd_scene load_steps=8 format=3 uid="uid://bbe2tvi20m4xi"]
 
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="1_2iknd"]
 [ext_resource type="Texture2D" uid="uid://do100heo8678u" path="res://kaynak/resim/zemin.png" id="2_ajvdc"]
+[ext_resource type="Texture2D" uid="uid://c6e6thb3wsfqk" path="res://kaynak/resim/layers/sky.png" id="3_ndcbc"]
+[ext_resource type="Texture2D" uid="uid://dn76dqhbk0r1d" path="res://kaynak/resim/layers/front.png" id="5_70ocg"]
+[ext_resource type="Texture2D" uid="uid://210af81ns7x7" path="res://kaynak/resim/layers/far-mountains.png" id="5_wbkc0"]
+[ext_resource type="PackedScene" uid="uid://b2xc8u6mbyvst" path="res://sahneler/karakter/mob-base.tscn" id="6_70ocg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5og2"]
-size = Vector2(212, 17)
+size = Vector2(664, 17)
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(-9, 18)
 
-[node name="Oyuncu" parent="." instance=ExtResource("1_2iknd")]
-position = Vector2(115, 13)
+[node name="Oyuncu" parent="." node_paths=PackedStringArray("level") instance=ExtResource("1_2iknd")]
+position = Vector2(81, 74)
+level = NodePath("..")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." groups=["floor"]]
-position = Vector2(97, 143)
+position = Vector2(96, 178)
 collision_layer = 3
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(17.5, -59)
-scale = Vector2(13.1875, 1)
+position = Vector2(237.5, -50)
+scale = Vector2(39.4375, 1)
 texture = ExtResource("2_ajvdc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(18, -59.5)
+position = Vector2(254, -50.5)
 shape = SubResource("RectangleShape2D_h5og2")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Canyon" type="Sprite2D" parent="ParallaxBackground"]
+scale = Vector2(11.2812, 1)
+texture = ExtResource("3_ndcbc")
+centered = false
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground2"]
+motion_mirroring = Vector2(400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer"]
+texture = ExtResource("5_wbkc0")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground2"]
+position = Vector2(200, 0)
+motion_mirroring = Vector2(400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground2/ParallaxLayer2"]
+texture = ExtResource("5_wbkc0")
+centered = false
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground3"]
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer"]
+texture = ExtResource("5_70ocg")
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground3"]
+position = Vector2(200, 0)
+motion_scale = Vector2(1.2, 1.2)
+motion_mirroring = Vector2(400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer2"]
+texture = ExtResource("5_70ocg")
+centered = false
+
+[node name="Mob-base" parent="." instance=ExtResource("6_70ocg")]
+position = Vector2(213, 111)
