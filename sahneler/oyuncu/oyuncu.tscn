@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://qqwfi0hl7del"]
+
+[ext_resource type="Script" uid="uid://csg2hi1qbo2st" path="res://sahneler/oyuncu/oyuncu.gd" id="1_xq5k3"]
+[ext_resource type="Texture2D" uid="uid://bg1noia2rfi3k" path="res://kaynak/resim/cevdet.png" id="2_mhvpp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wtns"]
+radius = 6.0
+height = 16.0
+
+[node name="Oyuncu" type="CharacterBody2D"]
+script = ExtResource("1_xq5k3")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_mhvpp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_6wtns")
