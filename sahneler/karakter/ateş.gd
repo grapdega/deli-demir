@@ -19,13 +19,13 @@ func set_value(value):
 		return
 	if value > 0:
 		$"ateş1".show()
-	if value > 20:
+	if value >= 20:
 		$"ateş1".show()
-	if value > 40:
+	if value >= 40:
 		$"ateş2".show()
-	if value > 60:
+	if value >= 60:
 		$"ateş3".show()
-	if value > 80:
+	if value >= 80:
 		$"ateş4".show()
 	if value >= 100:
 		$"ateş5".show()

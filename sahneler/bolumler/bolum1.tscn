@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bhys36eakasne"]
+[gd_scene load_steps=19 format=3 uid="uid://bhys36eakasne"]
 
 [ext_resource type="Texture2D" uid="uid://b2ydfi5pt7wt2" path="res://kaynak/resim/bolum1.png" id="1_iwxlc"]
 [ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="1_lsywx"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="2_qi8xi"]
 [ext_resource type="Texture2D" uid="uid://bgrvi5b76p836" path="res://kaynak/resim/atas-icon.png" id="3_ll4k0"]
 [ext_resource type="Texture2D" uid="uid://byb26rkn5w4q5" path="res://kaynak/resim/fire-Sheet.png" id="3_qi8xi"]
+[ext_resource type="Texture2D" uid="uid://b61qsqpiqmvay" path="res://kaynak/resim/komur.png" id="4_tfpgt"]
+[ext_resource type="PackedScene" uid="uid://b2xc8u6mbyvst" path="res://sahneler/karakter/mob-base.tscn" id="8_c8oup"]
+[ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="9_upmh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsywx"]
 size = Vector2(501, 13)
@@ -68,6 +71,10 @@ script = ExtResource("1_pcyvn")
 position = Vector2(8, 8)
 image = ExtResource("3_ll4k0")
 
+[node name="komur" parent="UI" instance=ExtResource("1_lsywx")]
+position = Vector2(8, 26)
+image = ExtResource("4_tfpgt")
+
 [node name="arkaplan" type="Sprite2D" parent="."]
 position = Vector2(267, 60)
 texture = ExtResource("1_iwxlc")
@@ -88,14 +95,17 @@ position = Vector2(47, 100)
 shape = SubResource("RectangleShape2D_iwxlc")
 
 [node name="atas" type="StaticBody2D" parent="." groups=["ataş"]]
+position = Vector2(463, 110)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="atas"]
-position = Vector2(465, 110)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_c8oup")
 autoplay = "default"
 frame_progress = 0.722345
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="atas"]
-position = Vector2(465, 110)
 shape = SubResource("RectangleShape2D_upmh6")
+
+[node name="Mob-base" parent="." instance=ExtResource("8_c8oup")]
+position = Vector2(242, 115)
+sprite = ExtResource("9_upmh6")
