@@ -8,18 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://dn76dqhbk0r1d" path="res://kaynak/resim/layers/front.png" id="5_7cib1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1yuk"]
-size = Vector2(372, 20)
+size = Vector2(369, 20)
 
 [node name="Bolum2" type="Node2D"]
 script = ExtResource("1_jied2")
 
 [node name="Oyuncu" parent="." instance=ExtResource("3_r1yuk")]
+position = Vector2(56, 200)
 
 [node name="zemin" type="StaticBody2D" parent="."]
 position = Vector2(11, 231)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
-position = Vector2(169, -72)
+position = Vector2(167, 2)
 shape = SubResource("RectangleShape2D_r1yuk")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="zemin"]
@@ -61,9 +62,10 @@ transform = Transform2D(1, 0, 0, 1, 0, 140)
 motion_mirroring = Vector2(360, 0)
 
 [node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground3/ParallaxLayer"]
-offset_top = 10.0
-offset_right = 360.0
-offset_bottom = 26.0
+offset_left = 1.0
+offset_top = 84.0
+offset_right = 361.0
+offset_bottom = 100.0
 texture = ExtResource("1_73piw")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true

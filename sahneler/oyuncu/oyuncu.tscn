@@ -140,7 +140,7 @@ animation = &"zbam"
 shape = SubResource("CapsuleShape2D_6wtns")
 
 [node name="kamera" type="Camera2D" parent="."]
-position = Vector2(48, -29)
+position = Vector2(52, -32)
 
 [node name="areya" type="Area2D" parent="." groups=["attack"]]
 position = Vector2(11, 0)
