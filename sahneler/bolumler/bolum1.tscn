@@ -201,7 +201,7 @@ position = Vector2(13, 99)
 sprite_frames = SubResource("SpriteFrames_pd2sg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="komur"]
-position = Vector2(47, 100)
+position = Vector2(51, 97)
 shape = SubResource("RectangleShape2D_iwxlc")
 
 [node name="arkaplan2" type="Sprite2D" parent="."]
@@ -209,16 +209,17 @@ position = Vector2(265, 59)
 texture = ExtResource("13_g78fp")
 
 [node name="Oyuncu" parent="." instance=ExtResource("2_qi8xi")]
-position = Vector2(132, 119)
+position = Vector2(125, 114)
 
 [node name="sonrakibolum" type="Area2D" parent="."]
-position = Vector2(-18, -3)
+position = Vector2(-17, -9)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="sonrakibolum"]
 position = Vector2(627.5, 102.75)
 shape = SubResource("RectangleShape2D_lnn6d")
 
 [node name="zemin" type="StaticBody2D" parent="."]
+position = Vector2(-5, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
 position = Vector2(323, 135)

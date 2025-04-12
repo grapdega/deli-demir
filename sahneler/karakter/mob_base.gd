@@ -13,7 +13,9 @@ func _ready() -> void:
 	add_to_group("mob")
 	$Sprite2D.texture = sprite
 	
-
+func do_animation_finished():
+	print($sıprayt.animation)
+	
 func _process(delta: float) -> void:
 	if heal <= 0:
 		queue_free()

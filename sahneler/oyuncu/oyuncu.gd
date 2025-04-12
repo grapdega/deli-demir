@@ -20,8 +20,15 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 func _ready() -> void:
 	$"areya".connect("body_entered",_on_area_entered)
 	$"areya".connect("body_exited",_on_area_exited)
+	$"sıprayt".connect("animation_finished",do_animation_finished)
 	cam_x = $kamera.position.x
 	cam_y = $kamera.position.y
+
+func do_animation_finished():
+	if $"sıprayt".animation == "zbam":
+		for mob in near_mob:
+			if mob.is_in_group("mob"):
+				mob.heal -= 100
 
 func _on_area_entered(area):
 	print("enter",area)
@@ -82,8 +89,6 @@ func _physics_process(delta):
 		for mob in near_mob:
 			if mob.is_in_group("maden"):
 				shake_timeout = 3
-			if mob.is_in_group("mob"):
-				mob.heal -= 100
 		$"sıprayt".play("zbam")
 
 	
