@@ -79,6 +79,6 @@ func _physics_process(delta):
 				shake_timeout = 3
 			if mob.is_in_group("mob"):
 				mob.heal -= 10
-	#	$AnimatedSprite2D.play("attack")
+		$"sıprayt".play("zbam")
 
 	
