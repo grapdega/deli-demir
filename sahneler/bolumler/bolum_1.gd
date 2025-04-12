@@ -21,7 +21,7 @@ func mine():
 				komur = 5
 			$"UI/komur".set_value(komur*20)
 		if mine.is_in_group("ataş"):
-			fire += komur * 4;
+			fire += komur * 5;
 			$"UI/komur".set_value(0)
 			komur = 0
 
@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 	if su:
 		if(su.global_position.y > 100):
 			su.queue_free()
+			$atas/animasyon.play("puff")
 			fire -= randi_range(0,10)
 			su_time = randi_range(200,300)
 			print(su_time," ",fire)

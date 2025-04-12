@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhys36eakasne"]
+[gd_scene load_steps=29 format=3 uid="uid://bhys36eakasne"]
 
 [ext_resource type="Texture2D" uid="uid://b2ydfi5pt7wt2" path="res://kaynak/resim/bolum1.png" id="1_iwxlc"]
 [ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="1_lsywx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://byb26rkn5w4q5" path="res://kaynak/resim/fire-Sheet.png" id="3_qi8xi"]
 [ext_resource type="Texture2D" uid="uid://b61qsqpiqmvay" path="res://kaynak/resim/komur.png" id="4_tfpgt"]
 [ext_resource type="PackedScene" uid="uid://b2xc8u6mbyvst" path="res://sahneler/karakter/mob-base.tscn" id="8_c8oup"]
+[ext_resource type="Texture2D" uid="uid://b2g8f36nenvpc" path="res://kaynak/resim/buhar-Sheet.png" id="8_upmh6"]
 [ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="9_upmh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsywx"]
@@ -62,6 +63,70 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_upmh6"]
 size = Vector2(34, 34)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnn6d"]
+atlas = ExtResource("8_upmh6")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rk3k4"]
+atlas = ExtResource("8_upmh6")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw3pi"]
+atlas = ExtResource("8_upmh6")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpkck"]
+atlas = ExtResource("8_upmh6")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g78fp"]
+atlas = ExtResource("8_upmh6")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crnem"]
+atlas = ExtResource("8_upmh6")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_llrer"]
+atlas = ExtResource("8_upmh6")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eiob2"]
+atlas = ExtResource("8_upmh6")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pexas"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnn6d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rk3k4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw3pi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpkck")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g78fp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crnem")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_llrer")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eiob2")
+}],
+"loop": false,
+"name": &"puff",
+"speed": 10.0
+}]
+
 [node name="Bolum1" type="Node2D"]
 script = ExtResource("1_pcyvn")
 
@@ -105,6 +170,13 @@ frame_progress = 0.722345
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="atas"]
 shape = SubResource("RectangleShape2D_upmh6")
+
+[node name="animasyon" type="AnimatedSprite2D" parent="atas"]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_pexas")
+animation = &"puff"
+frame = 7
+frame_progress = 1.0
 
 [node name="Mob-base" parent="." instance=ExtResource("8_c8oup")]
 position = Vector2(242, 115)
