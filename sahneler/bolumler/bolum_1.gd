@@ -6,12 +6,19 @@ var komur = 0
 
 var su_time = 0
 
+var level_clear = false
+
 func _ready() -> void:
 	$Oyuncu.attack_signal = mine
+	$Oyuncu/kamera.limit_right = 620
 	$"UI/ateş".set_value(50)
 	$"UI/komur".set_value(0)
+	$sonrakibolum.connect("body_entered",next_level)
 
 @onready var su : StaticBody2D
+
+func next_level():
+	get_tree().change_scene_to_file("res://sahneler/bolumler/bolum2.tscn")
 
 func mine():
 	for mine in $Oyuncu.near_mob:
@@ -24,9 +31,14 @@ func mine():
 			fire += komur * 5;
 			$"UI/komur".set_value(0)
 			komur = 0
+		if fire >= 100:
+			level_clear = true
+			$atas.queue_free()
 
 func _process(delta: float) -> void:
 	$"UI/ateş".set_value(fire)
+	if level_clear:
+		return
 	if su_time > 0:
 		su_time -=delta*50
 		return
