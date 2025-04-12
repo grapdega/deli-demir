@@ -20,6 +20,7 @@ func _ready() -> void:
 func mine():
 	for mine in $Oyuncu.near_mob:
 		if mine.is_in_group("kömür"):
+			$komur/AnimatedSprite2D.play()
 			komur += 1
 			if komur >= 5:
 				komur = 5

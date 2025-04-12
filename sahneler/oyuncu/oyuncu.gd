@@ -36,8 +36,8 @@ func _physics_process(delta):
 	# Add the gravity.
 	if shake_timeout > 0:
 		shake_timeout -= delta*10
-		$kamera.position.x = cam_x + randi_range(-2,2)
-		$kamera.position.y = cam_y + randi_range(-2,2)
+		$kamera.position.x = cam_x + randi_range(-1,1)
+		$kamera.position.y = cam_y + randi_range(-1,1)
 	else:
 		$kamera.position.x = cam_x
 		$kamera.position.y = cam_y

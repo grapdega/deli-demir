@@ -1,6 +1,5 @@
-[gd_scene load_steps=31 format=3 uid="uid://bhys36eakasne"]
+[gd_scene load_steps=39 format=3 uid="uid://bhys36eakasne"]
 
-[ext_resource type="Texture2D" uid="uid://b2ydfi5pt7wt2" path="res://kaynak/resim/bolum1.png" id="1_iwxlc"]
 [ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="1_lsywx"]
 [ext_resource type="Script" uid="uid://biq8jplph61r8" path="res://sahneler/bolumler/bolum_1.gd" id="1_pcyvn"]
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="2_qi8xi"]
@@ -11,15 +10,61 @@
 [ext_resource type="Texture2D" uid="uid://b2g8f36nenvpc" path="res://kaynak/resim/buhar-Sheet.png" id="8_upmh6"]
 [ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="9_upmh6"]
 [ext_resource type="PackedScene" uid="uid://brw6xw848q20" path="res://sahneler/karakter/partikül.tscn" id="11_lnn6d"]
+[ext_resource type="Texture2D" uid="uid://duivkmpvuyfd4" path="res://kaynak/resim/bolum1-1.png" id="11_mw3pi"]
+[ext_resource type="Texture2D" uid="uid://co6fmltko7gsq" path="res://kaynak/resim/geyikkkduvar-Sheet.png" id="12_dpkck"]
+[ext_resource type="Texture2D" uid="uid://cjv5b5y73v6uf" path="res://kaynak/resim/bolum1-2.png" id="13_g78fp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pexas"]
+atlas = ExtResource("12_dpkck")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhnoc"]
+atlas = ExtResource("12_dpkck")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ns8hy"]
+atlas = ExtResource("12_dpkck")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5vvo"]
+atlas = ExtResource("12_dpkck")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xc2bk"]
+atlas = ExtResource("12_dpkck")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pd2sg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pexas")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mhnoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ns8hy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5vvo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xc2bk")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwxlc"]
+size = Vector2(55, 51)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnn6d"]
 size = Vector2(35, 55.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsywx"]
 size = Vector2(647.5, 13)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwxlc"]
-size = Vector2(55, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lsywx"]
 atlas = ExtResource("3_qi8xi")
@@ -147,7 +192,21 @@ image = ExtResource("4_tfpgt")
 
 [node name="arkaplan" type="Sprite2D" parent="."]
 position = Vector2(267, 60)
-texture = ExtResource("1_iwxlc")
+texture = ExtResource("11_mw3pi")
+
+[node name="komur" type="StaticBody2D" parent="." groups=["kömür"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="komur"]
+position = Vector2(13, 99)
+sprite_frames = SubResource("SpriteFrames_pd2sg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="komur"]
+position = Vector2(47, 100)
+shape = SubResource("RectangleShape2D_iwxlc")
+
+[node name="arkaplan2" type="Sprite2D" parent="."]
+position = Vector2(265, 59)
+texture = ExtResource("13_g78fp")
 
 [node name="Oyuncu" parent="." instance=ExtResource("2_qi8xi")]
 position = Vector2(132, 119)
@@ -164,12 +223,6 @@ shape = SubResource("RectangleShape2D_lnn6d")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
 position = Vector2(323, 135)
 shape = SubResource("RectangleShape2D_lsywx")
-
-[node name="komur" type="StaticBody2D" parent="." groups=["kömür"]]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="komur"]
-position = Vector2(47, 100)
-shape = SubResource("RectangleShape2D_iwxlc")
 
 [node name="atas" type="StaticBody2D" parent="." groups=["ataş"]]
 position = Vector2(463, 110)
