@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://bwdbxu8uxm7jn"]
+
+[ext_resource type="Texture2D" uid="uid://b2ydfi5pt7wt2" path="res://kaynak/resim/bolum1.png" id="1_iwxlc"]
+[ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="2_qi8xi"]
+[ext_resource type="Texture2D" uid="uid://byb26rkn5w4q5" path="res://kaynak/resim/fire-Sheet.png" id="3_qi8xi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lsywx"]
+size = Vector2(501, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iwxlc"]
+size = Vector2(55, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lsywx"]
+atlas = ExtResource("3_qi8xi")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcyvn"]
+atlas = ExtResource("3_qi8xi")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ll4k0"]
+atlas = ExtResource("3_qi8xi")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfpgt"]
+atlas = ExtResource("3_qi8xi")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3rvsq"]
+atlas = ExtResource("3_qi8xi")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c8oup"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lsywx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcyvn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ll4k0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfpgt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3rvsq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_upmh6"]
+size = Vector2(34, 34)
+
+[node name="Bolum1" type="Node2D"]
+
+[node name="arkaplan" type="Sprite2D" parent="."]
+position = Vector2(267, 60)
+texture = ExtResource("1_iwxlc")
+
+[node name="Oyuncu" parent="." instance=ExtResource("2_qi8xi")]
+position = Vector2(132, 119)
+
+[node name="zemin" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
+position = Vector2(255, 133)
+shape = SubResource("RectangleShape2D_lsywx")
+
+[node name="komur" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="komur"]
+position = Vector2(47, 100)
+shape = SubResource("RectangleShape2D_iwxlc")
+
+[node name="atas" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="atas"]
+position = Vector2(446, 110)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_c8oup")
+autoplay = "default"
+frame_progress = 0.722345
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="atas"]
+position = Vector2(446, 110)
+shape = SubResource("RectangleShape2D_upmh6")
