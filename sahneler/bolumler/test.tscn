@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bbe2tvi20m4xi"]
+[gd_scene load_steps=9 format=3 uid="uid://bbe2tvi20m4xi"]
 
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="1_2iknd"]
 [ext_resource type="Texture2D" uid="uid://do100heo8678u" path="res://kaynak/resim/zemin.png" id="2_ajvdc"]
@@ -6,11 +6,25 @@
 [ext_resource type="Texture2D" uid="uid://dn76dqhbk0r1d" path="res://kaynak/resim/layers/front.png" id="5_70ocg"]
 [ext_resource type="Texture2D" uid="uid://210af81ns7x7" path="res://kaynak/resim/layers/far-mountains.png" id="5_wbkc0"]
 [ext_resource type="PackedScene" uid="uid://b2xc8u6mbyvst" path="res://sahneler/karakter/mob-base.tscn" id="6_70ocg"]
+[ext_resource type="Texture2D" uid="uid://bg1noia2rfi3k" path="res://kaynak/resim/cevdet.png" id="7_g4hif"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5og2"]
 size = Vector2(664, 17)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Mob-base" parent="." instance=ExtResource("6_70ocg")]
+position = Vector2(213, 111)
+heal = 31
+sprite = ExtResource("7_g4hif")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -128
+
+[node name="Canyon" type="Sprite2D" parent="CanvasLayer"]
+scale = Vector2(11.2812, 1)
+texture = ExtResource("3_ndcbc")
+centered = false
 
 [node name="Oyuncu" parent="." instance=ExtResource("1_2iknd")]
 position = Vector2(81, 74)
@@ -21,20 +35,13 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
-position = Vector2(237.5, -50)
-scale = Vector2(39.4375, 1)
+position = Vector2(242, 19)
+scale = Vector2(45, 9.625)
 texture = ExtResource("2_ajvdc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(254, -50.5)
 shape = SubResource("RectangleShape2D_h5og2")
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="Canyon" type="Sprite2D" parent="ParallaxBackground"]
-scale = Vector2(11.2812, 1)
-texture = ExtResource("3_ndcbc")
-centered = false
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="."]
 
@@ -71,6 +78,3 @@ motion_mirroring = Vector2(400, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer2"]
 texture = ExtResource("5_70ocg")
 centered = false
-
-[node name="Mob-base" parent="." instance=ExtResource("6_70ocg")]
-position = Vector2(213, 111)

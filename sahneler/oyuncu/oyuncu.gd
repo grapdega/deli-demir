@@ -55,8 +55,7 @@ func _physics_process(delta):
 		
 	if Input.is_action_just_pressed("ui_attack") and is_on_floor():
 		for mob in near_mob:
-			near_mob.erase(mob)
-			mob.queue_free()
+			mob.heal -= 10
 	#	$AnimatedSprite2D.play("attack")
 
 	

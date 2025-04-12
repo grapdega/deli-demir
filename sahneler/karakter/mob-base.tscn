@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b2xc8u6mbyvst"]
+[gd_scene load_steps=5 format=3 uid="uid://b2xc8u6mbyvst"]
 
+[ext_resource type="Script" uid="uid://cm1s3a13nuy4" path="res://sahneler/karakter/mob_base.gd" id="1_c8ntd"]
 [ext_resource type="Texture2D" uid="uid://bg1noia2rfi3k" path="res://kaynak/resim/cevdet.png" id="1_cc7xs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_c8ntd"]
@@ -7,7 +8,8 @@ radius = 8.06226
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_cc7xs"]
 
-[node name="Mob-base" type="CharacterBody2D" groups=["mob"]]
+[node name="Mob-base" type="CharacterBody2D"]
+script = ExtResource("1_c8ntd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_c8ntd")
