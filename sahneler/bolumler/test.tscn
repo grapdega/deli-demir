@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bbe2tvi20m4xi"]
+[gd_scene load_steps=10 format=3 uid="uid://bbe2tvi20m4xi"]
 
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="1_2iknd"]
 [ext_resource type="Texture2D" uid="uid://do100heo8678u" path="res://kaynak/resim/zemin.png" id="2_ajvdc"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://210af81ns7x7" path="res://kaynak/resim/layers/far-mountains.png" id="5_wbkc0"]
 [ext_resource type="PackedScene" uid="uid://b2xc8u6mbyvst" path="res://sahneler/karakter/mob-base.tscn" id="6_70ocg"]
 [ext_resource type="Texture2D" uid="uid://bg1noia2rfi3k" path="res://kaynak/resim/cevdet.png" id="7_g4hif"]
+[ext_resource type="FontFile" uid="uid://dq6cw2smqu4rc" path="res://kaynak/Noto_Sans_Old_Turkic/NotoSansOldTurkic-Regular.ttf" id="8_w7qxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h5og2"]
 size = Vector2(664, 17)
@@ -78,3 +79,9 @@ motion_mirroring = Vector2(400, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground3/ParallaxLayer2"]
 texture = ExtResource("5_70ocg")
 centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("8_w7qxu")
+text = "𐱅𐰀𐰭𐰀"

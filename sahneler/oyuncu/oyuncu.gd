@@ -67,7 +67,8 @@ func _physics_process(delta):
 			$areya.position.x = abs($areya.position.x) * -1
 			$"sıprayt".play_backwards("walk")
 	else:
-		$"sıprayt".play("idle")
+		if $"sıprayt".animation == "idle":
+			$"sıprayt".play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	move_and_slide()

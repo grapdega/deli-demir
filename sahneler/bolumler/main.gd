@@ -1,0 +1,29 @@
+extends Node2D
+
+func _ready() -> void:
+	_translate_otk()
+
+func _translate_otk():
+	$basla.text = "𐰋𐰀𐱁𐰞𐰀"
+	$latin.text = "𐰞𐰀𐱃𐰃𐰤"
+	$orkun.text = "𐰆𐰺𐰸𐰣"
+	
+	
+func _translate_latin():
+	# basla
+	$basla.text = "basla"
+	$latin.text = "latin"
+	$orkun.text = "orkun"
+	
+
+
+func _on_basla_pressed() -> void:
+	get_tree().change_scene_to_file("res://sahneler/bolumler/bolum1.tscn") # Replace with function body.
+
+
+func _on_latin_pressed() -> void:
+	_translate_latin() 
+
+
+func _on_orkun_pressed() -> void:
+	_translate_otk()
