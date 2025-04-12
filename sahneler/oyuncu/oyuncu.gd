@@ -9,12 +9,19 @@ var inventory = []
 
 var attack_signal: Callable
 
+var shake_timeout = 0
+
+var cam_x = 0
+var cam_y = 0
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 func _ready() -> void:
 	$"areya".connect("body_entered",_on_area_entered)
 	$"areya".connect("body_exited",_on_area_exited)
+	cam_x = $kamera.position.x
+	cam_y = $kamera.position.y
 
 func _on_area_entered(area):
 	print("enter",area)
@@ -27,6 +34,15 @@ func _on_area_exited(area):
 
 func _physics_process(delta):
 	# Add the gravity.
+	if shake_timeout > 0:
+		shake_timeout -= delta*10
+		$kamera.position.x = cam_x + randi_range(-2,2)
+		$kamera.position.y = cam_y + randi_range(-2,2)
+	else:
+		$kamera.position.x = cam_x
+		$kamera.position.y = cam_y
+	print(shake_timeout)
+	
 	if not is_on_floor():
 		velocity.y += gravity * delta
 	else:
@@ -59,6 +75,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_attack") and is_on_floor():
 		attack_signal.call()
 		for mob in near_mob:
+			if mob.is_in_group("kömür"):
+				shake_timeout = 3
 			if mob.is_in_group("mob"):
 				mob.heal -= 10
 	#	$AnimatedSprite2D.play("attack")
