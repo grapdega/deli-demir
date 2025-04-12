@@ -42,8 +42,10 @@ func _physics_process(delta):
 		if direction > 0:
 			$"sıprayt".flip_h = false
 			$"sıprayt".play("walk")
+			$areya.position.x = abs($areya.position.x) * 1
 		else:
 			$"sıprayt".flip_h = true
+			$areya.position.x = abs($areya.position.x) * -1
 			$"sıprayt".play_backwards("walk")
 	else:
 		$"sıprayt".play("idle")
