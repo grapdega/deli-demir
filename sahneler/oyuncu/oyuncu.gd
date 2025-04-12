@@ -5,6 +5,10 @@ const JUMP_VELOCITY = -200.0
 
 var near_mob = []
 
+var inventory = []
+
+var attack_signal: Callable
+
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
@@ -13,9 +17,8 @@ func _ready() -> void:
 	$"areya".connect("body_exited",_on_area_exited)
 
 func _on_area_entered(area):
-	if area.is_in_group("mob"):
-		print("enter",area)
-		near_mob.append(area)
+	print("enter",area)
+	near_mob.append(area)
 
 func _on_area_exited(area):
 	if area in near_mob:
@@ -54,8 +57,10 @@ func _physics_process(delta):
 	move_and_slide()
 		
 	if Input.is_action_just_pressed("ui_attack") and is_on_floor():
+		attack_signal.call()
 		for mob in near_mob:
-			mob.heal -= 10
+			if mob.is_in_group("mob"):
+				mob.heal -= 10
 	#	$AnimatedSprite2D.play("attack")
 
 	

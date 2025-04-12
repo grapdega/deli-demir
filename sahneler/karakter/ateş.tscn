@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciebyc4dfwf7a"]
+
+[ext_resource type="Script" uid="uid://bxxsrkxvw7pc2" path="res://sahneler/karakter/ateş.gd" id="1_h0e8q"]
+[ext_resource type="Texture2D" uid="uid://bg1noia2rfi3k" path="res://kaynak/resim/cevdet.png" id="1_wmra6"]
+
+[node name="ateş" type="Node2D"]
+script = ExtResource("1_h0e8q")
+
+[node name="ateş1" type="Sprite2D" parent="."]
+texture = ExtResource("1_wmra6")
+
+[node name="ateş2" type="Sprite2D" parent="."]
+position = Vector2(15, 0)
+texture = ExtResource("1_wmra6")
+
+[node name="ateş3" type="Sprite2D" parent="."]
+position = Vector2(31, 0)
+texture = ExtResource("1_wmra6")
+
+[node name="ateş4" type="Sprite2D" parent="."]
+position = Vector2(47, 0)
+texture = ExtResource("1_wmra6")
+
+[node name="ateş5" type="Sprite2D" parent="."]
+position = Vector2(63, 0)
+texture = ExtResource("1_wmra6")

@@ -1,7 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://bwdbxu8uxm7jn"]
+[gd_scene load_steps=16 format=3 uid="uid://bhys36eakasne"]
 
 [ext_resource type="Texture2D" uid="uid://b2ydfi5pt7wt2" path="res://kaynak/resim/bolum1.png" id="1_iwxlc"]
+[ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="1_lsywx"]
+[ext_resource type="Script" uid="uid://biq8jplph61r8" path="res://sahneler/bolumler/bolum_1.gd" id="1_pcyvn"]
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="2_qi8xi"]
+[ext_resource type="Texture2D" uid="uid://bg1noia2rfi3k" path="res://kaynak/resim/cevdet.png" id="3_ll4k0"]
 [ext_resource type="Texture2D" uid="uid://byb26rkn5w4q5" path="res://kaynak/resim/fire-Sheet.png" id="3_qi8xi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lsywx"]
@@ -57,6 +60,13 @@ animations = [{
 size = Vector2(34, 34)
 
 [node name="Bolum1" type="Node2D"]
+script = ExtResource("1_pcyvn")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ateş" parent="UI" instance=ExtResource("1_lsywx")]
+position = Vector2(8, 8)
+image = ExtResource("3_ll4k0")
 
 [node name="arkaplan" type="Sprite2D" parent="."]
 position = Vector2(267, 60)
@@ -71,13 +81,13 @@ position = Vector2(132, 119)
 position = Vector2(255, 133)
 shape = SubResource("RectangleShape2D_lsywx")
 
-[node name="komur" type="StaticBody2D" parent="."]
+[node name="komur" type="StaticBody2D" parent="." groups=["kömür"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="komur"]
 position = Vector2(47, 100)
 shape = SubResource("RectangleShape2D_iwxlc")
 
-[node name="atas" type="StaticBody2D" parent="."]
+[node name="atas" type="StaticBody2D" parent="." groups=["ataş"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="atas"]
 position = Vector2(446, 110)
