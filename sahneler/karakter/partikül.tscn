@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://brw6xw848q20"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_jiuuw"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_max = 101.7
+gravity = Vector3(0, 0, 0)
+turbulence_enabled = true
+
+[node name="Partikül" type="GPUParticles2D"]
+amount = 99
+process_material = SubResource("ParticleProcessMaterial_jiuuw")

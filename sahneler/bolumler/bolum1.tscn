@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bhys36eakasne"]
+[gd_scene load_steps=31 format=3 uid="uid://bhys36eakasne"]
 
 [ext_resource type="Texture2D" uid="uid://b2ydfi5pt7wt2" path="res://kaynak/resim/bolum1.png" id="1_iwxlc"]
 [ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="1_lsywx"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://b2xc8u6mbyvst" path="res://sahneler/karakter/mob-base.tscn" id="8_c8oup"]
 [ext_resource type="Texture2D" uid="uid://b2g8f36nenvpc" path="res://kaynak/resim/buhar-Sheet.png" id="8_upmh6"]
 [ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="9_upmh6"]
+[ext_resource type="PackedScene" uid="uid://brw6xw848q20" path="res://sahneler/karakter/partikül.tscn" id="11_lnn6d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lnn6d"]
 size = Vector2(35, 55.5)
@@ -192,5 +193,8 @@ frame_progress = 1.0
 [node name="Mob-base" parent="." instance=ExtResource("8_c8oup")]
 position = Vector2(242, 115)
 sprite = ExtResource("9_upmh6")
+
+[node name="Partikül" parent="." instance=ExtResource("11_lnn6d")]
+position = Vector2(508, 106)
 
 [connection signal="body_entered" from="sonrakibolum" to="." method="_on_sonrakibolum_body_entered"]

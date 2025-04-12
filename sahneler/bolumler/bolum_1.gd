@@ -34,6 +34,7 @@ func mine():
 
 func _process(delta: float) -> void:
 	$"UI/ateş".set_value(fire)
+	$"Partikül".amount = fire
 	if level_clear:
 		return
 	if su_time > 0:
