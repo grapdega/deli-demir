@@ -13,12 +13,9 @@ func _ready() -> void:
 	$Oyuncu/kamera.limit_right = 620
 	$"UI/ateş".set_value(50)
 	$"UI/komur".set_value(0)
-	$sonrakibolum.connect("body_entered",next_level)
 
 @onready var su : StaticBody2D
 
-func next_level():
-	get_tree().change_scene_to_file("res://sahneler/bolumler/bolum2.tscn")
 
 func mine():
 	for mine in $Oyuncu.near_mob:
@@ -59,3 +56,7 @@ func _process(delta: float) -> void:
 	if fire > 100:
 		fire = 100
 	
+
+
+func _on_sonrakibolum_body_entered(body: Node2D) -> void:
+	get_tree().change_scene_to_file("res://sahneler/bolumler/bolum2.tscn") # Replace with function body.

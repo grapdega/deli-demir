@@ -152,7 +152,7 @@ texture = ExtResource("1_iwxlc")
 position = Vector2(132, 119)
 
 [node name="sonrakibolum" type="Area2D" parent="."]
-position = Vector2(-219, -4)
+position = Vector2(-18, -3)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="sonrakibolum"]
 position = Vector2(627.5, 102.75)
@@ -192,3 +192,5 @@ frame_progress = 1.0
 [node name="Mob-base" parent="." instance=ExtResource("8_c8oup")]
 position = Vector2(242, 115)
 sprite = ExtResource("9_upmh6")
+
+[connection signal="body_entered" from="sonrakibolum" to="." method="_on_sonrakibolum_body_entered"]
