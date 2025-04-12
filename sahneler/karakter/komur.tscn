@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8yyraqaj67kd"]
+
+[ext_resource type="Texture2D" uid="uid://b61qsqpiqmvay" path="res://kaynak/resim/komur.png" id="1_qburc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lxg2n"]
+radius = 7.07107
+
+[node name="komur" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["kömür"]]
+shape = SubResource("CircleShape2D_lxg2n")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+texture = ExtResource("1_qburc")

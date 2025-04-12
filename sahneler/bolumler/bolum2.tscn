@@ -1,3 +1,69 @@
-[gd_scene format=3 uid="uid://c2kn8ig5g0cf2"]
+[gd_scene load_steps=8 format=3 uid="uid://c2kn8ig5g0cf2"]
+
+[ext_resource type="Texture2D" uid="uid://do100heo8678u" path="res://kaynak/resim/zemin.png" id="1_73piw"]
+[ext_resource type="Script" uid="uid://8g5k6yvg8j6a" path="res://sahneler/bolumler/bolum_2.gd" id="1_jied2"]
+[ext_resource type="Texture2D" uid="uid://210af81ns7x7" path="res://kaynak/resim/layers/far-mountains.png" id="2_r1yuk"]
+[ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="3_r1yuk"]
+[ext_resource type="Texture2D" uid="uid://c6e6thb3wsfqk" path="res://kaynak/resim/layers/sky.png" id="4_suqi2"]
+[ext_resource type="Texture2D" uid="uid://dn76dqhbk0r1d" path="res://kaynak/resim/layers/front.png" id="5_7cib1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r1yuk"]
+size = Vector2(372, 20)
 
 [node name="Bolum2" type="Node2D"]
+script = ExtResource("1_jied2")
+
+[node name="Oyuncu" parent="." instance=ExtResource("3_r1yuk")]
+
+[node name="zemin" type="StaticBody2D" parent="."]
+position = Vector2(11, 231)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
+position = Vector2(169, -72)
+shape = SubResource("RectangleShape2D_r1yuk")
+
+[node name="ParallaxBackground2" type="ParallaxBackground" parent="zemin"]
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
+motion_mirroring = Vector2(360, 0)
+
+[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer2"]
+offset_right = 360.0
+offset_bottom = 16.0
+texture = ExtResource("4_suqi2")
+stretch_mode = 1
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
+motion_scale = Vector2(1.2, 1)
+motion_mirroring = Vector2(360, 0)
+
+[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer"]
+offset_right = 360.0
+offset_bottom = 16.0
+texture = ExtResource("2_r1yuk")
+stretch_mode = 1
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
+motion_scale = Vector2(1.4, 1)
+motion_mirroring = Vector2(360, 0)
+
+[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer3"]
+offset_right = 360.0
+offset_bottom = 16.0
+texture = ExtResource("5_7cib1")
+stretch_mode = 6
+
+[node name="ParallaxBackground3" type="ParallaxBackground" parent="zemin"]
+offset = Vector2(0, 140)
+transform = Transform2D(1, 0, 0, 1, 0, 140)
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="zemin/ParallaxBackground3"]
+motion_mirroring = Vector2(360, 0)
+
+[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground3/ParallaxLayer"]
+offset_top = 10.0
+offset_right = 360.0
+offset_bottom = 26.0
+texture = ExtResource("1_73piw")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true

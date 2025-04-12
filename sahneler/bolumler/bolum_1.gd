@@ -1,11 +1,8 @@
 extends Node2D
 
 var fire = 50
-
 var komur = 0
-
 var su_time = 0
-
 var level_clear = false
 
 func _ready() -> void:
@@ -16,22 +13,35 @@ func _ready() -> void:
 
 @onready var su : StaticBody2D
 
+var komurs = []
+var num_of_kom = 0
 
 func mine():
 	for mine in $Oyuncu.near_mob:
-		if mine.is_in_group("kömür"):
+		if mine.is_in_group("maden"):
 			$komur/AnimatedSprite2D.play()
+			if num_of_kom < 5:
+				var kom : RigidBody2D
+				num_of_kom+=1;
+				kom = load("res://sahneler/karakter/komur.tscn").instantiate()
+				kom.global_position.x = randi_range(100, 435)
+				kom.global_position.y = 40
+				komurs.append(kom)
+				add_child(kom)
+		if mine in komurs:
 			komur += 1
-			if komur >= 5:
-				komur = 5
-			$"UI/komur".set_value(komur*20)
+			komurs.erase(mine)
+			num_of_kom-=1;
+			$UI/komur.set_value(komur*20)
+			mine.queue_free()
 		if mine.is_in_group("ataş"):
 			fire += komur * 5;
 			$"UI/komur".set_value(0)
 			komur = 0
 		if fire >= 100:
 			level_clear = true
-			$atas.queue_free()
+			if $atas:
+				$atas.queue_free()
 
 func _process(delta: float) -> void:
 	$"UI/ateş".set_value(fire)

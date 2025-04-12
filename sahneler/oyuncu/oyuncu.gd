@@ -75,7 +75,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("ui_attack") and is_on_floor():
 		attack_signal.call()
 		for mob in near_mob:
-			if mob.is_in_group("kömür"):
+			if mob.is_in_group("maden"):
 				shake_timeout = 3
 			if mob.is_in_group("mob"):
 				mob.heal -= 10

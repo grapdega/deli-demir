@@ -194,7 +194,7 @@ image = ExtResource("4_tfpgt")
 position = Vector2(267, 60)
 texture = ExtResource("11_mw3pi")
 
-[node name="komur" type="StaticBody2D" parent="." groups=["kömür"]]
+[node name="komur" type="StaticBody2D" parent="." groups=["maden"]]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="komur"]
 position = Vector2(13, 99)
@@ -245,6 +245,8 @@ frame_progress = 1.0
 
 [node name="Mob-base" parent="." instance=ExtResource("8_c8oup")]
 position = Vector2(242, 115)
+collision_layer = 2
+collision_mask = 2
 sprite = ExtResource("9_upmh6")
 
 [node name="Partikül" parent="." instance=ExtResource("11_lnn6d")]

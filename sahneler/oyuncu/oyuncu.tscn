@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://qqwfi0hl7del"]
+[gd_scene load_steps=15 format=3 uid="uid://qqwfi0hl7del"]
 
 [ext_resource type="Script" uid="uid://csg2hi1qbo2st" path="res://sahneler/oyuncu/oyuncu.gd" id="1_xq5k3"]
 [ext_resource type="Texture2D" uid="uid://bih8qgnheuux5" path="res://kaynak/resim/cevdet-idle.png" id="2_mhvpp"]
 [ext_resource type="Texture2D" uid="uid://cg7br01fsna1u" path="res://kaynak/resim/cevdet-walk.png" id="3_6wtns"]
-[ext_resource type="Texture2D" uid="uid://bqnvng3c0dpq5" path="res://kaynak/resim/cevdet-attack1-Sheet.png" id="4_25cv5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6wtns"]
 atlas = ExtResource("2_mhvpp")
@@ -36,30 +35,6 @@ region = Rect2(96, 0, 32, 16)
 [sub_resource type="AtlasTexture" id="AtlasTexture_vwap4"]
 atlas = ExtResource("3_6wtns")
 region = Rect2(128, 0, 32, 16)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gghhi"]
-atlas = ExtResource("4_25cv5")
-region = Rect2(0, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_57dmq"]
-atlas = ExtResource("4_25cv5")
-region = Rect2(64, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1lpfd"]
-atlas = ExtResource("4_25cv5")
-region = Rect2(128, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hby8k"]
-atlas = ExtResource("4_25cv5")
-region = Rect2(192, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5xkcr"]
-atlas = ExtResource("4_25cv5")
-region = Rect2(256, 0, 64, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dqjfg"]
-atlas = ExtResource("4_25cv5")
-region = Rect2(320, 0, 64, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8825k"]
 animations = [{
@@ -97,36 +72,19 @@ animations = [{
 "name": &"walk",
 "speed": 10.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gghhi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_57dmq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1lpfd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hby8k")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5xkcr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dqjfg")
-}],
+"frames": [],
 "loop": true,
 "name": &"zbam",
-"speed": 10.0
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6wtns"]
 radius = 7.0
 height = 14.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6wtns"]
-radius = 7.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_25cv5"]
+radius = 9.0
+height = 24.0
 
 [node name="Oyuncu" type="CharacterBody2D"]
 script = ExtResource("1_xq5k3")
@@ -134,8 +92,6 @@ script = ExtResource("1_xq5k3")
 [node name="sıprayt" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8825k")
 animation = &"zbam"
-frame = 5
-frame_progress = 0.3177
 
 [node name="kolaydır" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_6wtns")
@@ -147,4 +103,6 @@ position = Vector2(48, -29)
 position = Vector2(11, 0)
 
 [node name="kolaydır_areya" type="CollisionShape2D" parent="areya"]
-shape = SubResource("CircleShape2D_6wtns")
+position = Vector2(-7, 0)
+rotation = 1.57079
+shape = SubResource("CapsuleShape2D_25cv5")
