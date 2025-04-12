@@ -7,6 +7,7 @@ func _process(delta: float) -> void:
 	$Oyuncu/kamera.limit_bottom = 238
 	$Oyuncu/kamera.limit_top = 0
 	$Oyuncu/kamera.position.y = -66
+	$Oyuncu/kamera.limit_right = 500
 	if wave_timeout > 0:
 		wave_timeout -= delta*10
 	else:
