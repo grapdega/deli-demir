@@ -41,7 +41,7 @@ func _physics_process(delta):
 	else:
 		$kamera.position.x = cam_x
 		$kamera.position.y = cam_y
-	print(shake_timeout)
+	
 	
 	if not is_on_floor():
 		velocity.y += gravity * delta
@@ -83,7 +83,7 @@ func _physics_process(delta):
 			if mob.is_in_group("maden"):
 				shake_timeout = 3
 			if mob.is_in_group("mob"):
-				mob.heal -= 10
+				mob.heal -= 100
 		$"sıprayt".play("zbam")
 
 	
