@@ -11,8 +11,8 @@ func _ready() -> void:
 		$devam.text = "𐰓𐰀𐰉𐰢:𐰀𐱅𐰢𐰀𐰚:𐰃𐰲𐰤:E:𐱃𐰆𐱁𐰣𐰀:𐰉𐰀𐰽"
 	else:
 		$Panel/Label.text =  \
-		"Buradan çıkmamız için dağı delmemiz lazım." +\
-		"Ateşe kömür atıp dağı tıkayan kayayı parçala. Acele et!"
+		"Buradan çıkmamız için dağı delmemiz lazım. " +\
+		"Ateşi kömürle harlayıp dağı tıkayan demiri erit!"
 		$devam.text = "Devam etmek için E tuşuna bas"
 
 func _process(delta: float) -> void:
