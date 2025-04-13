@@ -13,6 +13,8 @@ func _ready() -> void:
 		$tabela/Label.text = "Aksaray"
 	
 func _process(delta: float) -> void:
+	if $"kağnı".heal <= 0:
+		get_tree().change_scene_to_file("res://sahneler/bolumler/gameover.tscn")
 	$zemin.global_position.x = $Oyuncu.global_position.x
 	$Oyuncu/kamera.limit_bottom = 238
 	$Oyuncu/kamera.limit_top = 0
