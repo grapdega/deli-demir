@@ -26,7 +26,7 @@ func _process(delta: float) -> void:
 	else:
 		spawn_mobs()
 	$Oyuncu.attack_signal = do_signal
-	$"CanvasLayer/ateş".set_value($"kağnı".heal)
+	$"CanvasLayer/Label".text = str(int($"kağnı".heal))
 	if $"kağnı".global_position.x > level_long:
 		get_tree().change_scene_to_file("res://sahneler/bolumler/bolum3.tscn")
 	
