@@ -8,15 +8,20 @@ func _translate_otk():
 	$basla.text = "𐰋𐰀𐱁𐰞𐰀"
 	$latin.text = "𐰞𐰀𐱃𐰃𐰤"
 	$orkun.text = "𐰆𐰺𐰸𐰣"
-	$tuslar.text = "𐰆𐰺𐰸𐰣"
-	
+	$W.text = "W / 𐰉𐰆𐱁𐰞𐰸"
+	$E2.text = "𐰀𐱅𐰚𐰃𐰠𐰀𐱁𐰃𐰢"
+	$K2.text = "𐰽𐰀𐰡𐰃𐰺𐰃"
+	$L2.text = "𐰴𐰀𐰍𐰣𐰃𐰖:𐱃𐰆𐱃"
 	
 func _translate_latin():
 	# basla
 	$basla.text = "Başla"
 	$latin.text = "Latin"
 	$orkun.text = "Orkun"
-	$tuslar.text = "Tuşlar"
+	$W.text = "W / Boşluk"
+	$E2.text = "Etkileşim"
+	$K2.text = "Saldırı"
+	$L2.text = "Kağnıyı Tut"
 	
 
 

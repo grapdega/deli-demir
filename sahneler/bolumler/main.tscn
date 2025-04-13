@@ -1,8 +1,15 @@
-[gd_scene load_steps=8 format=3 uid="uid://dfn54cmukqgft"]
+[gd_scene load_steps=15 format=3 uid="uid://dfn54cmukqgft"]
 
 [ext_resource type="Script" uid="uid://bv4aofkv2nhm2" path="res://sahneler/bolumler/main.gd" id="1_83j65"]
+[ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="2_aun2u"]
 [ext_resource type="Texture2D" uid="uid://bih8qgnheuux5" path="res://kaynak/resim/cevdet-idle.png" id="2_dglvg"]
 [ext_resource type="Texture2D" uid="uid://d6phg21xc1fh" path="res://kaynak/resim/lang.png" id="3_beadw"]
+[ext_resource type="Texture2D" uid="uid://c557uy4xc856o" path="res://kaynak/resim/howto/arrow-inter.png" id="4_le3o0"]
+[ext_resource type="Texture2D" uid="uid://dod8ixouq8d4u" path="res://kaynak/resim/howto/arrow-sag.png" id="5_aun2u"]
+[ext_resource type="Texture2D" uid="uid://bsaea21301fco" path="res://kaynak/resim/howto/arrow-sol.png" id="6_sut3j"]
+[ext_resource type="Texture2D" uid="uid://dgpy1kqmtjj2q" path="res://kaynak/resim/howto/arrow-yukari.png" id="7_hxk4y"]
+[ext_resource type="Texture2D" uid="uid://c8ikpn0hkb811" path="res://kaynak/resim/howto/cekic.png" id="8_scdik"]
+[ext_resource type="Texture2D" uid="uid://i2uelk8uhg21" path="res://kaynak/resim/howto/teker.png" id="9_xth14"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n08rp"]
 atlas = ExtResource("2_dglvg")
@@ -36,6 +43,10 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_83j65")
 
+[node name="Paralax-bg" type="Sprite2D" parent="."]
+position = Vector2(179, 89)
+texture = ExtResource("2_aun2u")
+
 [node name="basla" type="Button" parent="."]
 offset_left = 103.0
 offset_top = 41.0
@@ -57,13 +68,6 @@ offset_right = 347.0
 offset_bottom = 82.0
 text = "orkun"
 
-[node name="Label" type="Label" parent="."]
-offset_left = 91.0
-offset_top = 146.0
-offset_right = 196.0
-offset_bottom = 169.0
-text = "Team TöreDot"
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(53, 40)
 scale = Vector2(3, 3)
@@ -82,14 +86,105 @@ offset_right = 177.0
 offset_bottom = 41.0
 text = "TöreDot Cevdet"
 
-[node name="tuslar" type="Button" parent="."]
-offset_left = 17.0
-offset_top = 141.0
-offset_right = 85.0
+[node name="inter" type="Sprite2D" parent="."]
+position = Vector2(231.5, 90.5)
+scale = Vector2(0.65625, 0.65625)
+texture = ExtResource("4_le3o0")
+
+[node name="sag" type="Sprite2D" parent="."]
+position = Vector2(72, 140)
+texture = ExtResource("5_aun2u")
+
+[node name="sol" type="Sprite2D" parent="."]
+position = Vector2(39, 141)
+texture = ExtResource("6_sut3j")
+
+[node name="zipla" type="Sprite2D" parent="."]
+position = Vector2(56, 116)
+texture = ExtResource("7_hxk4y")
+
+[node name="cekic" type="Sprite2D" parent="."]
+position = Vector2(218, 125)
+scale = Vector2(2.04545, 2.35714)
+texture = ExtResource("8_scdik")
+
+[node name="teker" type="Sprite2D" parent="."]
+position = Vector2(236.5, 161)
+scale = Vector2(3, 3)
+texture = ExtResource("9_xth14")
+
+[node name="W" type="Label" parent="."]
+offset_left = 21.0
+offset_top = 78.0
+offset_right = 101.0
+offset_bottom = 101.0
+text = "W / Boşluk"
+metadata/_edit_use_anchors_ = true
+
+[node name="A" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 128.0
+offset_right = 32.0
+offset_bottom = 151.0
+text = "A"
+metadata/_edit_use_anchors_ = true
+
+[node name="D" type="Label" parent="."]
+offset_left = 85.0
+offset_top = 128.0
+offset_right = 102.0
+offset_bottom = 151.0
+text = "D"
+metadata/_edit_use_anchors_ = true
+
+[node name="E" type="Label" parent="."]
+offset_left = 246.0
+offset_top = 78.0
+offset_right = 263.0
+offset_bottom = 101.0
+text = "E"
+metadata/_edit_use_anchors_ = true
+
+[node name="E2" type="Label" parent="."]
+offset_left = 124.0
+offset_top = 81.0
+offset_right = 192.0
+offset_bottom = 104.0
+text = "Etkileşim"
+metadata/_edit_use_anchors_ = true
+
+[node name="K" type="Label" parent="."]
+offset_left = 246.0
+offset_top = 114.0
+offset_right = 263.0
+offset_bottom = 137.0
+text = "K"
+metadata/_edit_use_anchors_ = true
+
+[node name="K2" type="Label" parent="."]
+offset_left = 126.0
+offset_top = 114.0
+offset_right = 173.0
+offset_bottom = 137.0
+text = "Saldırı"
+metadata/_edit_use_anchors_ = true
+
+[node name="L" type="Label" parent="."]
+offset_left = 251.5
+offset_top = 150.0
+offset_right = 265.5
+offset_bottom = 173.0
+text = "L"
+metadata/_edit_use_anchors_ = true
+
+[node name="L2" type="Label" parent="."]
+offset_left = 126.0
+offset_top = 149.0
+offset_right = 262.0
 offset_bottom = 172.0
-text = "Tuşlar"
+text = "Kağnıyı Tut"
+metadata/_edit_use_anchors_ = true
 
 [connection signal="pressed" from="basla" to="." method="_on_basla_pressed"]
 [connection signal="pressed" from="latin" to="." method="_on_latin_pressed"]
 [connection signal="pressed" from="orkun" to="." method="_on_orkun_pressed"]
-[connection signal="pressed" from="tuslar" to="." method="_on_basla_pressed"]

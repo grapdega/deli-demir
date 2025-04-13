@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://ctk0yi3cfotx5"]
+[gd_scene load_steps=10 format=3 uid="uid://c62k2wdvbnkfa"]
 
-[ext_resource type="Script" uid="uid://dbdty3th3bv3s" path="res://sahneler/aralevel/aralevel.gd" id="1_x7bn4"]
+[ext_resource type="Script" uid="uid://epchsf2k3tmg" path="res://sahneler/aralevel/tuslar.gd" id="1_ya42b"]
 [ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="2_stafk"]
 [ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="3_8jjds"]
 [ext_resource type="Texture2D" uid="uid://c557uy4xc856o" path="res://kaynak/resim/howto/arrow-inter.png" id="4_e5oab"]
@@ -11,8 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://i2uelk8uhg21" path="res://kaynak/resim/howto/teker.png" id="9_ya42b"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_x7bn4")
-nextlevel = "res://sahneler/bolumler/bolum1.tscn"
+script = ExtResource("1_ya42b")
 
 [node name="Paralax-bg" type="Sprite2D" parent="."]
 position = Vector2(179, 89)
@@ -29,6 +28,7 @@ offset_top = 152.0
 offset_right = 355.0
 offset_bottom = 175.0
 text = "Devam etmek için E tuşuna bas"
+metadata/_edit_use_anchors_ = true
 
 [node name="inter" type="Sprite2D" parent="."]
 position = Vector2(274.5, 28.5)
@@ -63,6 +63,7 @@ offset_top = 24.0
 offset_right = 133.0
 offset_bottom = 47.0
 text = "W / Boşluk"
+metadata/_edit_use_anchors_ = true
 
 [node name="A" type="Label" parent="."]
 offset_left = 58.0
@@ -70,6 +71,7 @@ offset_top = 74.0
 offset_right = 75.0
 offset_bottom = 97.0
 text = "A"
+metadata/_edit_use_anchors_ = true
 
 [node name="D" type="Label" parent="."]
 offset_left = 128.0
@@ -77,6 +79,7 @@ offset_top = 74.0
 offset_right = 145.0
 offset_bottom = 97.0
 text = "D"
+metadata/_edit_use_anchors_ = true
 
 [node name="E" type="Label" parent="."]
 offset_left = 289.0
@@ -84,6 +87,7 @@ offset_top = 16.0
 offset_right = 306.0
 offset_bottom = 39.0
 text = "E"
+metadata/_edit_use_anchors_ = true
 
 [node name="E2" type="Label" parent="."]
 offset_left = 191.0
@@ -91,6 +95,7 @@ offset_top = 17.0
 offset_right = 259.0
 offset_bottom = 40.0
 text = "Etkileşim"
+metadata/_edit_use_anchors_ = true
 
 [node name="K" type="Label" parent="."]
 offset_left = 289.0
@@ -98,6 +103,7 @@ offset_top = 52.0
 offset_right = 306.0
 offset_bottom = 75.0
 text = "K"
+metadata/_edit_use_anchors_ = true
 
 [node name="K2" type="Label" parent="."]
 offset_left = 189.0
@@ -105,6 +111,7 @@ offset_top = 52.0
 offset_right = 236.0
 offset_bottom = 75.0
 text = "Saldırı"
+metadata/_edit_use_anchors_ = true
 
 [node name="L" type="Label" parent="."]
 offset_left = 292.0
@@ -112,6 +119,7 @@ offset_top = 87.0
 offset_right = 306.0
 offset_bottom = 110.0
 text = "L"
+metadata/_edit_use_anchors_ = true
 
 [node name="L2" type="Label" parent="."]
 offset_left = 175.0
@@ -119,3 +127,4 @@ offset_top = 87.0
 offset_right = 258.0
 offset_bottom = 110.0
 text = "Kağnıyı Tut"
+metadata/_edit_use_anchors_ = true
