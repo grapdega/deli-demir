@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://8g5k6yvg8j6a" path="res://sahneler/bolumler/bolum_2.gd" id="1_jied2"]
 [ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="2_mf05u"]
-[ext_resource type="Texture2D" uid="uid://rxypsldfutvr" path="res://kaynak/resim/su.png" id="3_cq652"]
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="3_r1yuk"]
+[ext_resource type="Texture2D" uid="uid://i2uelk8uhg21" path="res://kaynak/resim/howto/teker.png" id="3_svr6w"]
 [ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="5_cq652"]
 [ext_resource type="Texture2D" uid="uid://bqbk4fvuagbio" path="res://kaynak/resim/paralax/paralax-Uzak.png" id="6_svr6w"]
 [ext_resource type="Texture2D" uid="uid://dacvg083psyuu" path="res://kaynak/resim/paralax/paralax-yakin.png" id="7_ejm5q"]
@@ -22,7 +22,8 @@ script = ExtResource("1_jied2")
 
 [node name="ateş" parent="CanvasLayer" instance=ExtResource("2_mf05u")]
 position = Vector2(9, 16)
-image = ExtResource("3_cq652")
+scale = Vector2(3, 3)
+image = ExtResource("3_svr6w")
 
 [node name="Oyuncu" parent="." instance=ExtResource("3_r1yuk")]
 position = Vector2(130, 124)

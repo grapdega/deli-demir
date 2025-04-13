@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://dfn54cmukqgft"]
+[gd_scene load_steps=14 format=3 uid="uid://dfn54cmukqgft"]
 
 [ext_resource type="Script" uid="uid://bv4aofkv2nhm2" path="res://sahneler/bolumler/main.gd" id="1_83j65"]
-[ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="2_aun2u"]
 [ext_resource type="Texture2D" uid="uid://bih8qgnheuux5" path="res://kaynak/resim/cevdet-idle.png" id="2_dglvg"]
 [ext_resource type="Texture2D" uid="uid://d6phg21xc1fh" path="res://kaynak/resim/lang.png" id="3_beadw"]
 [ext_resource type="Texture2D" uid="uid://c557uy4xc856o" path="res://kaynak/resim/howto/arrow-inter.png" id="4_le3o0"]
@@ -43,10 +42,6 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_83j65")
 
-[node name="Paralax-bg" type="Sprite2D" parent="."]
-position = Vector2(179, 89)
-texture = ExtResource("2_aun2u")
-
 [node name="basla" type="Button" parent="."]
 offset_left = 103.0
 offset_top = 41.0
@@ -87,101 +82,101 @@ offset_bottom = 41.0
 text = "TöreDot Cevdet"
 
 [node name="inter" type="Sprite2D" parent="."]
-position = Vector2(231.5, 90.5)
-scale = Vector2(0.65625, 0.65625)
+position = Vector2(220, 120)
+scale = Vector2(0.8125, 0.8125)
 texture = ExtResource("4_le3o0")
 
 [node name="sag" type="Sprite2D" parent="."]
-position = Vector2(72, 140)
+position = Vector2(67, 166)
 texture = ExtResource("5_aun2u")
 
 [node name="sol" type="Sprite2D" parent="."]
-position = Vector2(39, 141)
+position = Vector2(40, 165.2)
 texture = ExtResource("6_sut3j")
 
 [node name="zipla" type="Sprite2D" parent="."]
-position = Vector2(56, 116)
+position = Vector2(56, 148)
 texture = ExtResource("7_hxk4y")
 
 [node name="cekic" type="Sprite2D" parent="."]
-position = Vector2(218, 125)
-scale = Vector2(2.04545, 2.35714)
+position = Vector2(215, 141)
+scale = Vector2(2.92857, 2.92857)
 texture = ExtResource("8_scdik")
 
 [node name="teker" type="Sprite2D" parent="."]
-position = Vector2(236.5, 161)
-scale = Vector2(3, 3)
+position = Vector2(212, 164)
+scale = Vector2(2.21428, 2.21428)
 texture = ExtResource("9_xth14")
 
 [node name="W" type="Label" parent="."]
-offset_left = 21.0
-offset_top = 78.0
-offset_right = 101.0
-offset_bottom = 101.0
+offset_left = 16.0
+offset_top = 116.0
+offset_right = 96.0
+offset_bottom = 139.0
 text = "W / Boşluk"
 metadata/_edit_use_anchors_ = true
 
 [node name="A" type="Label" parent="."]
 offset_left = 15.0
-offset_top = 128.0
+offset_top = 151.0
 offset_right = 32.0
-offset_bottom = 151.0
+offset_bottom = 174.0
 text = "A"
 metadata/_edit_use_anchors_ = true
 
 [node name="D" type="Label" parent="."]
-offset_left = 85.0
-offset_top = 128.0
-offset_right = 102.0
-offset_bottom = 151.0
+offset_left = 77.0
+offset_top = 151.0
+offset_right = 94.0
+offset_bottom = 174.0
 text = "D"
 metadata/_edit_use_anchors_ = true
 
 [node name="E" type="Label" parent="."]
-offset_left = 246.0
-offset_top = 78.0
-offset_right = 263.0
-offset_bottom = 101.0
+offset_left = 234.0
+offset_top = 107.0
+offset_right = 251.0
+offset_bottom = 130.0
 text = "E"
 metadata/_edit_use_anchors_ = true
 
 [node name="E2" type="Label" parent="."]
-offset_left = 124.0
-offset_top = 81.0
-offset_right = 192.0
-offset_bottom = 104.0
+offset_left = 115.0
+offset_top = 108.0
+offset_right = 183.0
+offset_bottom = 131.0
 text = "Etkileşim"
 metadata/_edit_use_anchors_ = true
 
 [node name="K" type="Label" parent="."]
-offset_left = 246.0
-offset_top = 114.0
-offset_right = 263.0
-offset_bottom = 137.0
+offset_left = 251.0
+offset_top = 129.0
+offset_right = 268.0
+offset_bottom = 152.0
 text = "K"
 metadata/_edit_use_anchors_ = true
 
 [node name="K2" type="Label" parent="."]
-offset_left = 126.0
-offset_top = 114.0
-offset_right = 173.0
-offset_bottom = 137.0
+offset_left = 122.0
+offset_top = 131.0
+offset_right = 169.0
+offset_bottom = 154.0
 text = "Saldırı"
 metadata/_edit_use_anchors_ = true
 
 [node name="L" type="Label" parent="."]
-offset_left = 251.5
-offset_top = 150.0
-offset_right = 265.5
-offset_bottom = 173.0
+offset_left = 225.0
+offset_top = 152.0
+offset_right = 239.0
+offset_bottom = 175.0
 text = "L"
 metadata/_edit_use_anchors_ = true
 
 [node name="L2" type="Label" parent="."]
-offset_left = 126.0
-offset_top = 149.0
-offset_right = 262.0
-offset_bottom = 172.0
+offset_left = 114.0
+offset_top = 152.0
+offset_right = 250.0
+offset_bottom = 175.0
 text = "Kağnıyı Tut"
 metadata/_edit_use_anchors_ = true
 
