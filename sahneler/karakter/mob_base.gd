@@ -2,11 +2,11 @@ extends CharacterBody2D
 
 @export var heal = 100
 
-@export var speed = 3000
+@export var speed = 2000
 
 var can_move = true
 
-var player: CharacterBody2D
+var player: StaticBody2D
 @export var sprite: SpriteFrames
 
 func _ready() -> void:

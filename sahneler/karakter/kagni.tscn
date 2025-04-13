@@ -1,28 +1,77 @@
-[gd_scene load_steps=5 format=3 uid="uid://c5e1dwdc82vip"]
+[gd_scene load_steps=12 format=3 uid="uid://c5e1dwdc82vip"]
 
 [ext_resource type="Script" uid="uid://8emqmryioil4" path="res://sahneler/karakter/kagni.gd" id="1_yykmg"]
-[ext_resource type="Texture2D" uid="uid://bn5dik0tms4qj" path="res://icon.svg" id="2_k7m7i"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kbh0j"]
+[ext_resource type="Texture2D" uid="uid://cq5f7orq882v4" path="res://kaynak/resim/kagni.png" id="2_62ue7"]
+[ext_resource type="Texture2D" uid="uid://c3wfhf3lcno6b" path="res://kaynak/resim/kagni-harekaat.png" id="3_ad5ql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7m7i"]
-size = Vector2(13, 20)
+size = Vector2(46, 26)
 
-[node name="Node2D" type="StaticBody2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbu6o"]
+atlas = ExtResource("2_62ue7")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkptv"]
+atlas = ExtResource("3_ad5ql")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg23b"]
+atlas = ExtResource("3_ad5ql")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86pej"]
+atlas = ExtResource("3_ad5ql")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kw0au"]
+atlas = ExtResource("3_ad5ql")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2lhtl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbu6o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkptv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rg23b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86pej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kw0au")
+}],
+"loop": true,
+"name": &"lock",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_62ue7"]
+
+[node name="Kağnı" type="StaticBody2D"]
 script = ExtResource("1_yykmg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_kbh0j")
-
-[node name="Icon" type="Sprite2D" parent="." groups=["kağnı"]]
-scale = Vector2(0.15, 0.165)
-texture = ExtResource("2_k7m7i")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(13.5, 0)
+position = Vector2(-3, 3)
 shape = SubResource("RectangleShape2D_k7m7i")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_2lhtl")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_62ue7")
+disabled = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
