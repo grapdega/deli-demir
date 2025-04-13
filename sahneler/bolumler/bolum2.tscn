@@ -1,6 +1,5 @@
 [gd_scene load_steps=12 format=3 uid="uid://c2kn8ig5g0cf2"]
 
-[ext_resource type="Texture2D" uid="uid://do100heo8678u" path="res://kaynak/resim/zemin.png" id="1_73piw"]
 [ext_resource type="Script" uid="uid://8g5k6yvg8j6a" path="res://sahneler/bolumler/bolum_2.gd" id="1_jied2"]
 [ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="2_mf05u"]
 [ext_resource type="Texture2D" uid="uid://rxypsldfutvr" path="res://kaynak/resim/su.png" id="3_cq652"]
@@ -10,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dacvg083psyuu" path="res://kaynak/resim/paralax/paralax-yakin.png" id="7_ejm5q"]
 [ext_resource type="PackedScene" uid="uid://c5e1dwdc82vip" path="res://sahneler/karakter/kagni.tscn" id="7_li4hg"]
 [ext_resource type="Texture2D" uid="uid://hynb5nyqnayd" path="res://kaynak/resim/paralax/paralax-gokyuzu.png" id="8_ckjfr"]
+[ext_resource type="Texture2D" uid="uid://c3kkilyru181g" path="res://kaynak/resim/cimen.png" id="9_cq652"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1yuk"]
 size = Vector2(369, 20)
@@ -30,7 +30,7 @@ position = Vector2(130, 124)
 position = Vector2(13, 168)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
-position = Vector2(167, 2)
+position = Vector2(168, -23)
 shape = SubResource("RectangleShape2D_r1yuk")
 
 [node name="ParallaxBackground2" type="ParallaxBackground" parent="zemin"]
@@ -82,13 +82,12 @@ transform = Transform2D(1, 0, 0, 1, 0, 140)
 motion_mirroring = Vector2(360, 0)
 
 [node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground3/ParallaxLayer"]
-offset_left = 1.0
-offset_top = 25.0
-offset_right = 361.0
-offset_bottom = 41.0
-texture = ExtResource("1_73piw")
+offset_top = -10.0
+offset_right = 360.0
+offset_bottom = 11.0
+texture = ExtResource("9_cq652")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="kağnı" parent="." instance=ExtResource("7_li4hg")]
-position = Vector2(181, 142)
+position = Vector2(184, 119)
