@@ -2,13 +2,14 @@
 
 [ext_resource type="Texture2D" uid="uid://b61qsqpiqmvay" path="res://kaynak/resim/komur.png" id="1_qburc"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lxg2n"]
-radius = 7.07107
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qburc"]
+size = Vector2(13, 12)
 
 [node name="komur" type="RigidBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["kömür"]]
-shape = SubResource("CircleShape2D_lxg2n")
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_qburc")
 
-[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qburc")

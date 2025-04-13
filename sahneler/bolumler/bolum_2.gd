@@ -39,7 +39,7 @@ func spawn_mobs():
 		if mobnum == 0:
 			ocu.sprite = load("res://kaynak/mob1.tres")
 		if mobnum == 1:
-			ocu.sprite = load("res://kaynak/mob3.tres")
+			ocu.sprite = load("res://kaynak/mob2.tres")
 		if mobnum == 2:
 			ocu.sprite = load("res://kaynak/mob3.tres")
 		ocu.global_position.y = $Oyuncu.global_position.y
