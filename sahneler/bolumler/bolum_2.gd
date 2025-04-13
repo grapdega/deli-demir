@@ -1,6 +1,7 @@
 extends Node2D
 
 var wave_timeout = 0
+var level_long = 500
 
 func _process(delta: float) -> void:
 	$zemin.global_position.x = $Oyuncu.global_position.x
@@ -8,13 +9,15 @@ func _process(delta: float) -> void:
 	$Oyuncu/kamera.limit_top = 0
 	$Oyuncu/kamera.position.y = -66
 	$Oyuncu/kamera.position.x = 0
-	$Oyuncu/kamera.limit_right = 500
+	$Oyuncu/kamera.limit_right = level_long
 	if wave_timeout > 0:
 		wave_timeout -= delta*10
 	else:
 		spawn_mobs()
 	$Oyuncu.attack_signal = do_signal
 	$"CanvasLayer/ateş".set_value($"kağnı".heal)
+	if $"kağnı".global_position.x > level_long:
+		get_tree().change_scene_to_file("res://sahneler/bolumler/bolum3.tscn")
 	
 func do_signal():
 	print("hmmm")
