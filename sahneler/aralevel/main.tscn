@@ -28,8 +28,7 @@ layout_mode = 0
 offset_left = 2.0
 offset_right = 240.0
 offset_bottom = 105.0
-text = "Buradan çıkmamız için dağı delmemiz lazım.
-Ateşe kömür atıp dağı tıkayan kayayı parçala. Acele et!"
+text = "Hello World"
 autowrap_mode = 2
 
 [node name="devam" type="Label" parent="."]

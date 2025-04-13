@@ -28,13 +28,12 @@ layout_mode = 0
 offset_left = 2.0
 offset_right = 240.0
 offset_bottom = 105.0
-text = "Vadiye ulaşana kadar kağnıyı koruman gerek
-Gelen düşmanlara karşı Uyarık ol"
+text = "Hello World"
 autowrap_mode = 2
 
 [node name="devam" type="Label" parent="."]
-offset_left = 124.0
+offset_left = 84.0
 offset_top = 152.0
-offset_right = 358.0
+offset_right = 318.0
 offset_bottom = 175.0
 text = "Devam etmek için E tuşuna bas"

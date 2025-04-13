@@ -190,8 +190,10 @@ position = Vector2(8, 26)
 image = ExtResource("4_tfpgt")
 
 [node name="arkaplan" type="Sprite2D" parent="."]
-position = Vector2(267, 60)
+position = Vector2(1, -22)
+scale = Vector2(0.872222, 0.726923)
 texture = ExtResource("11_mw3pi")
+centered = false
 
 [node name="komur" type="StaticBody2D" parent="." groups=["maden"]]
 

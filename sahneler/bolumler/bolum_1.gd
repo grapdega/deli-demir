@@ -42,6 +42,7 @@ func mine():
 			level_clear = true
 			if $atas:
 				$atas.queue_free()
+				$arkaplan.texture = load("res://kaynak/resim/bolum1-bg.png")
 
 func _process(delta: float) -> void:
 	$"UI/ateş".set_value(fire)
