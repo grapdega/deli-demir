@@ -1,7 +1,7 @@
 extends Node2D
 
 var wave_timeout = 0
-var level_long = 500
+var level_long = 2500
 
 func _process(delta: float) -> void:
 	$zemin.global_position.x = $Oyuncu.global_position.x
