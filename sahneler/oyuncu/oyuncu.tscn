@@ -129,7 +129,7 @@ height = 14.0
 radius = 9.0
 height = 24.0
 
-[node name="Oyuncu" type="CharacterBody2D"]
+[node name="Oyuncu" type="CharacterBody2D" groups=["oyuncu"]]
 script = ExtResource("1_xq5k3")
 
 [node name="sıprayt" type="AnimatedSprite2D" parent="."]

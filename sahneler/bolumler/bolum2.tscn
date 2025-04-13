@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c2kn8ig5g0cf2"]
+[gd_scene load_steps=9 format=3 uid="uid://c2kn8ig5g0cf2"]
 
 [ext_resource type="Texture2D" uid="uid://do100heo8678u" path="res://kaynak/resim/zemin.png" id="1_73piw"]
 [ext_resource type="Script" uid="uid://8g5k6yvg8j6a" path="res://sahneler/bolumler/bolum_2.gd" id="1_jied2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="3_r1yuk"]
 [ext_resource type="Texture2D" uid="uid://c6e6thb3wsfqk" path="res://kaynak/resim/layers/sky.png" id="4_suqi2"]
 [ext_resource type="Texture2D" uid="uid://dn76dqhbk0r1d" path="res://kaynak/resim/layers/front.png" id="5_7cib1"]
+[ext_resource type="PackedScene" uid="uid://c5e1dwdc82vip" path="res://sahneler/karakter/kagni.tscn" id="7_li4hg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1yuk"]
 size = Vector2(369, 20)
@@ -69,3 +70,6 @@ offset_bottom = 100.0
 texture = ExtResource("1_73piw")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Node2D" parent="." instance=ExtResource("7_li4hg")]
+position = Vector2(120, 217)

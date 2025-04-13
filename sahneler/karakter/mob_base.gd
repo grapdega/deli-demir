@@ -7,11 +7,12 @@ extends CharacterBody2D
 var can_move = true
 
 var player: CharacterBody2D
-@export var sprite: Texture
+@export var sprite: SpriteFrames
 
 func _ready() -> void:
 	add_to_group("mob")
-	$Sprite2D.texture = sprite
+	$AnimatedSprite2D.sprite_frames = sprite
+	$AnimatedSprite2D.play("default")
 	
 func do_animation_finished():
 	print($sıprayt.animation)

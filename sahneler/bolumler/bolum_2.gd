@@ -12,14 +12,22 @@ func _process(delta: float) -> void:
 		wave_timeout -= delta*10
 	else:
 		spawn_mobs()
+	$Oyuncu.attack_signal = do_signal	
 	
-	
+func do_signal():
+	print("hmmm")
 
 func spawn_mobs():
 	for num in range(randi_range(1,5)):
 		var ocu = load("res://sahneler/karakter/mob-base.tscn").instantiate()
 		ocu.player = $Oyuncu
-		ocu.sprite = load("res://kaynak/resim/dedem.png")
+		var mobnum = randi_range(0,2)
+		if mobnum == 0:
+			ocu.sprite = load("res://kaynak/mob1.tres")
+		if mobnum == 1:
+			ocu.sprite = load("res://kaynak/mob3.tres")
+		if mobnum == 2:
+			ocu.sprite = load("res://kaynak/mob3.tres")
 		ocu.global_position.y = $Oyuncu.global_position.y
 		ocu.global_position.x = $Oyuncu.global_position.x - randi_range(100,500)
 		add_child(ocu)

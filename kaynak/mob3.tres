@@ -1,0 +1,46 @@
+[gd_resource type="SpriteFrames" load_steps=7 format=3 uid="uid://iva0mxjnqkdf"]
+
+[ext_resource type="Texture2D" uid="uid://4v2t1106raes" path="res://kaynak/resim/mob3.png" id="1_35bvm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ytsf"]
+atlas = ExtResource("1_35bvm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejsrv"]
+atlas = ExtResource("1_35bvm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kspda"]
+atlas = ExtResource("1_35bvm")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_74cbh"]
+atlas = ExtResource("1_35bvm")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v45hw"]
+atlas = ExtResource("1_35bvm")
+region = Rect2(64, 0, 16, 16)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ytsf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejsrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kspda")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_74cbh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v45hw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
