@@ -1,17 +1,21 @@
-[gd_scene load_steps=23 format=3 uid="uid://c2ko2480tl7uy"]
+[gd_scene load_steps=34 format=3 uid="uid://c2ko2480tl7uy"]
 
+[ext_resource type="Script" uid="uid://do5a78luoa23q" path="res://sahneler/bolumler/bolum_3.gd" id="1_rbc0a"]
 [ext_resource type="Texture2D" uid="uid://dxub0lrurfr25" path="res://kaynak/resim/bolumSonu/bolum35.png" id="1_ykn6q"]
 [ext_resource type="Texture2D" uid="uid://dq5l3t4318nir" path="res://kaynak/resim/bolumSonu/bolum33.png" id="2_o7dfe"]
 [ext_resource type="Texture2D" uid="uid://c0mofspnbatj6" path="res://kaynak/resim/bolumSonu/bolum34.png" id="3_o7dfe"]
 [ext_resource type="Texture2D" uid="uid://37yotq7c7oj0" path="res://kaynak/resim/bolumSonu/bolum31.png" id="3_rrgwd"]
 [ext_resource type="Texture2D" uid="uid://du2230bus6sqp" path="res://kaynak/resim/bolumSonu/bolum32.png" id="4_4dnvk"]
-[ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="6_rrgwd"]
 [ext_resource type="Texture2D" uid="uid://bpcnhiepp8bf7" path="res://kaynak/resim/bolumSonu/GocmenKizi.png" id="7_4dnvk"]
 [ext_resource type="Texture2D" uid="uid://c14pp2tpa4wc0" path="res://kaynak/resim/bolumSonu/cicek.png" id="8_yh1nu"]
 [ext_resource type="Texture2D" uid="uid://cybxacrnr88jy" path="res://kaynak/resim/bolumSonu/tabela2.png" id="9_vp4xy"]
+[ext_resource type="Texture2D" uid="uid://cg7br01fsna1u" path="res://kaynak/resim/cevdet-walk.png" id="10_rbc0a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yh1nu"]
 size = Vector2(369, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rrgwd"]
+size = Vector2(20, 178)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yh1nu"]
 atlas = ExtResource("7_4dnvk")
@@ -99,79 +103,186 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ol4me"]
+radius = 35.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0kpp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m08di"]
+atlas = ExtResource("10_rbc0a")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ceoos"]
+atlas = ExtResource("10_rbc0a")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76f6e"]
+atlas = ExtResource("10_rbc0a")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8ipl"]
+atlas = ExtResource("10_rbc0a")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_54k8a"]
+atlas = ExtResource("10_rbc0a")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gs6ou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m08di")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ceoos")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76f6e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8ipl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_54k8a")
+}],
+"loop": true,
+"name": &"walk1",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rbc0a"]
+radius = 15.0
+
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_rbc0a")
 
 [node name="zemin" type="StaticBody2D" parent="."]
-position = Vector2(13, 168)
+position = Vector2(0, 171)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
-position = Vector2(168, -23)
+position = Vector2(176, -25)
 shape = SubResource("RectangleShape2D_yh1nu")
 
-[node name="ParallaxBackground2" type="ParallaxBackground" parent="zemin"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="zemin"]
+position = Vector2(370, -79)
+shape = SubResource("RectangleShape2D_rrgwd")
 
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
-motion_mirroring = Vector2(360, 0)
-
-[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer2"]
-offset_right = 360.0
-offset_bottom = 16.0
-texture = ExtResource("1_ykn6q")
-stretch_mode = 1
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
-motion_scale = Vector2(1.2, 1)
-motion_mirroring = Vector2(360, 0)
-
-[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer"]
-offset_right = 360.0
-offset_bottom = 16.0
-texture = ExtResource("2_o7dfe")
-stretch_mode = 1
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
-motion_scale = Vector2(1.4, 1)
-motion_mirroring = Vector2(360, 0)
-
-[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer5"]
-offset_right = 360.0
-offset_bottom = 16.0
-texture = ExtResource("3_o7dfe")
-stretch_mode = 6
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
-motion_scale = Vector2(1.4, 1)
-motion_mirroring = Vector2(360, 0)
-
-[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer3"]
-offset_right = 360.0
-offset_bottom = 16.0
-texture = ExtResource("3_rrgwd")
-stretch_mode = 6
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
-motion_scale = Vector2(1.4, 1)
-motion_mirroring = Vector2(360, 0)
-
-[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer4"]
-offset_right = 360.0
-offset_bottom = 16.0
-texture = ExtResource("4_4dnvk")
-stretch_mode = 6
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="zemin"]
+position = Vector2(0, -79)
+shape = SubResource("RectangleShape2D_rrgwd")
 
 [node name="gocmenKiz" type="AnimatedSprite2D" parent="."]
 position = Vector2(170, 127)
 sprite_frames = SubResource("SpriteFrames_0dobl")
 autoplay = "default"
 
-[node name="cicek" type="AnimatedSprite2D" parent="."]
-position = Vector2(73, 130)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(108, 128)
 scale = Vector2(0.2, 0.2)
+
+[node name="cicek" type="AnimatedSprite2D" parent="StaticBody2D"]
+scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_m08di")
 autoplay = "default"
 
-[node name="Oyuncu" parent="." instance=ExtResource("6_rrgwd")]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_ol4me")
+disabled = true
+
+[node name="cicek" type="StaticBody2D" parent="." groups=["cicek"]]
+position = Vector2(108, 128)
+scale = Vector2(0.2, 0.2)
+
+[node name="cicek" type="AnimatedSprite2D" parent="cicek"]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_m08di")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cicek"]
+shape = SubResource("CircleShape2D_ol4me")
+
+[node name="kari" type="StaticBody2D" parent="." groups=["kari"]]
+position = Vector2(158, 128)
+scale = Vector2(0.2, 0.2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kari"]
+shape = SubResource("CircleShape2D_ol4me")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(26, 115)
 texture = ExtResource("9_vp4xy")
+
+[node name="Node2D" type="Node2D" parent="."]
+z_index = -1
+position = Vector2(182, 92)
+
+[node name="Bolum32" type="Sprite2D" parent="Node2D"]
+z_index = 2
+position = Vector2(-182, -92)
+texture = ExtResource("4_4dnvk")
+centered = false
+
+[node name="Bolum31" type="Sprite2D" parent="Node2D"]
+z_index = 3
+texture = ExtResource("3_rrgwd")
+
+[node name="Bolum33" type="Sprite2D" parent="Node2D"]
+z_index = 1
+position = Vector2(-182, -92)
+texture = ExtResource("2_o7dfe")
+centered = false
+
+[node name="Bolum34" type="Sprite2D" parent="Node2D"]
+position = Vector2(-182, -92)
+texture = ExtResource("3_o7dfe")
+centered = false
+
+[node name="Bolum35" type="Sprite2D" parent="Node2D"]
+z_index = -3
+position = Vector2(-182, -87)
+texture = ExtResource("1_ykn6q")
+centered = false
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(180, 91)
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(24, 125)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CircleShape2D_s0kpp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
+sprite_frames = SubResource("SpriteFrames_gs6ou")
+animation = &"walk1"
+autoplay = "walk1"
+
+[node name="Area2D" type="Area2D" parent="CharacterBody2D" groups=["cicek"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Area2D"]
+shape = SubResource("CircleShape2D_rbc0a")
+
+[node name="Panel" type="Panel" parent="."]
+z_index = 999
+offset_left = 27.0
+offset_top = 9.0
+offset_right = 334.0
+offset_bottom = 101.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 305.0
+offset_bottom = 115.0
+text = "Hello World"
+autowrap_mode = 2
+
+[node name="son" type="Label" parent="."]
+offset_left = 151.0
+offset_top = 53.0
+offset_right = 191.0
+offset_bottom = 76.0
+text = "SON"
+
+[connection signal="body_entered" from="CharacterBody2D/Area2D" to="." method="_on_area_2d_body_entered"]
