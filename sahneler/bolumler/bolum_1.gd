@@ -60,6 +60,12 @@ func _process(delta: float) -> void:
 		if(su.global_position.y > 100):
 			su.queue_free()
 			$atas/animasyon.play("puff")
+			var puff = AudioStreamPlayer.new()
+			add_child(puff)
+			puff.stream = load("res://kaynak/ses/buhaar.mp3")
+			puff.connect("finished", puff.queue_free)
+			print("puff")
+			puff.play()
 			fire -= randi_range(0,10)
 			su_time = randi_range(200,300)
 			print(su_time," ",fire)

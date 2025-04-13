@@ -3,6 +3,7 @@ extends Node2D
 @export var nextlevel = ""
 
 func _ready() -> void:
+	Globals.set_music(load("res://kaynak/ses/Bolum2.mp3"))
 	if Globals.otk:
 		$Panel/Label.text = \
 		"𐰀𐰣𐰑𐰆𐰞𐰖𐰀:𐰏𐰇𐰲𐰘𐰆𐰺𐰔:𐰲𐰀𐰋𐰓𐰀𐱅 " +\

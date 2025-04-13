@@ -96,7 +96,16 @@ func _physics_process(delta):
 			attack_signal.call()
 		for mob in near_mob:
 			if mob.is_in_group("maden"):
+				
 				shake_timeout = 3
 		$"sıprayt".play("zbam")
+		var audyo = AudioStreamPlayer.new()
+		add_child(audyo)
+		audyo.stream = load("res://kaynak/ses/cekic.mp3")
+		audyo.connect("finished", audyo.queue_free)
+		for mob in near_mob:
+			if mob.is_in_group("ataş"):
+				audyo.stream = load("res://kaynak/ses/ateseAttiginde.mp3")
+		audyo.play()
 
 	move_and_slide()
