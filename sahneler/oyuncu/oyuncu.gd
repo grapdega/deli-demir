@@ -11,6 +11,8 @@ var attack_signal: Callable
 
 var shake_timeout = 0
 
+var locked = false
+
 var cam_x = 0
 var cam_y = 0
 
@@ -56,15 +58,15 @@ func _physics_process(delta):
 		if not $"sıprayt".is_playing():
 			$"sıprayt".play("idle")
 
-	# Handle Jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		velocity.x = direction * SPEED
+		if locked:
+			velocity.x = velocity.x / 2
 		if direction > 0:
 			$"sıprayt".flip_h = false
 			if $"sıprayt".animation != "zbam":
@@ -81,7 +83,13 @@ func _physics_process(delta):
 			$"sıprayt".play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
-	move_and_slide()
+	if locked:
+		move_and_slide()
+		return
+	
+		# Handle Jump.
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
 		
 	if Input.is_action_just_pressed("ui_attack") and is_on_floor():
 		if attack_signal:
@@ -91,4 +99,4 @@ func _physics_process(delta):
 				shake_timeout = 3
 		$"sıprayt".play("zbam")
 
-	
+	move_and_slide()
