@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://c2kn8ig5g0cf2"]
+[gd_scene load_steps=12 format=3 uid="uid://c2kn8ig5g0cf2"]
 
 [ext_resource type="Texture2D" uid="uid://do100heo8678u" path="res://kaynak/resim/zemin.png" id="1_73piw"]
 [ext_resource type="Script" uid="uid://8g5k6yvg8j6a" path="res://sahneler/bolumler/bolum_2.gd" id="1_jied2"]
 [ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="2_mf05u"]
-[ext_resource type="Texture2D" uid="uid://210af81ns7x7" path="res://kaynak/resim/layers/far-mountains.png" id="2_r1yuk"]
 [ext_resource type="Texture2D" uid="uid://rxypsldfutvr" path="res://kaynak/resim/su.png" id="3_cq652"]
 [ext_resource type="PackedScene" uid="uid://qqwfi0hl7del" path="res://sahneler/oyuncu/oyuncu.tscn" id="3_r1yuk"]
-[ext_resource type="Texture2D" uid="uid://c6e6thb3wsfqk" path="res://kaynak/resim/layers/sky.png" id="4_suqi2"]
-[ext_resource type="Texture2D" uid="uid://dn76dqhbk0r1d" path="res://kaynak/resim/layers/front.png" id="5_7cib1"]
+[ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="5_cq652"]
+[ext_resource type="Texture2D" uid="uid://bqbk4fvuagbio" path="res://kaynak/resim/paralax/paralax-Uzak.png" id="6_svr6w"]
+[ext_resource type="Texture2D" uid="uid://dacvg083psyuu" path="res://kaynak/resim/paralax/paralax-yakin.png" id="7_ejm5q"]
 [ext_resource type="PackedScene" uid="uid://c5e1dwdc82vip" path="res://sahneler/karakter/kagni.tscn" id="7_li4hg"]
+[ext_resource type="Texture2D" uid="uid://hynb5nyqnayd" path="res://kaynak/resim/paralax/paralax-gokyuzu.png" id="8_ckjfr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1yuk"]
 size = Vector2(369, 20)
@@ -23,10 +24,10 @@ position = Vector2(9, 16)
 image = ExtResource("3_cq652")
 
 [node name="Oyuncu" parent="." instance=ExtResource("3_r1yuk")]
-position = Vector2(56, 200)
+position = Vector2(130, 124)
 
 [node name="zemin" type="StaticBody2D" parent="."]
-position = Vector2(11, 231)
+position = Vector2(13, 168)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="zemin"]
 position = Vector2(167, 2)
@@ -40,7 +41,7 @@ motion_mirroring = Vector2(360, 0)
 [node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer2"]
 offset_right = 360.0
 offset_bottom = 16.0
-texture = ExtResource("4_suqi2")
+texture = ExtResource("5_cq652")
 stretch_mode = 1
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
@@ -50,7 +51,7 @@ motion_mirroring = Vector2(360, 0)
 [node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer"]
 offset_right = 360.0
 offset_bottom = 16.0
-texture = ExtResource("2_r1yuk")
+texture = ExtResource("6_svr6w")
 stretch_mode = 1
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
@@ -60,7 +61,17 @@ motion_mirroring = Vector2(360, 0)
 [node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer3"]
 offset_right = 360.0
 offset_bottom = 16.0
-texture = ExtResource("5_7cib1")
+texture = ExtResource("7_ejm5q")
+stretch_mode = 6
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="zemin/ParallaxBackground2"]
+motion_scale = Vector2(1.4, 1)
+motion_mirroring = Vector2(360, 0)
+
+[node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground2/ParallaxLayer4"]
+offset_right = 360.0
+offset_bottom = 16.0
+texture = ExtResource("8_ckjfr")
 stretch_mode = 6
 
 [node name="ParallaxBackground3" type="ParallaxBackground" parent="zemin"]
@@ -72,12 +83,12 @@ motion_mirroring = Vector2(360, 0)
 
 [node name="TextureRect" type="TextureRect" parent="zemin/ParallaxBackground3/ParallaxLayer"]
 offset_left = 1.0
-offset_top = 84.0
+offset_top = 25.0
 offset_right = 361.0
-offset_bottom = 100.0
+offset_bottom = 41.0
 texture = ExtResource("1_73piw")
 stretch_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="kağnı" parent="." instance=ExtResource("7_li4hg")]
-position = Vector2(125, 206)
+position = Vector2(181, 142)
