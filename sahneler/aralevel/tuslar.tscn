@@ -1,0 +1,103 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctk0yi3cfotx5"]
+
+[ext_resource type="Script" uid="uid://dbdty3th3bv3s" path="res://sahneler/aralevel/aralevel.gd" id="1_x7bn4"]
+[ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="2_stafk"]
+[ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="3_8jjds"]
+[ext_resource type="Texture2D" uid="uid://c557uy4xc856o" path="res://kaynak/resim/howto/arrow-inter.png" id="4_e5oab"]
+[ext_resource type="Texture2D" uid="uid://dod8ixouq8d4u" path="res://kaynak/resim/howto/arrow-sag.png" id="5_ya42b"]
+[ext_resource type="Texture2D" uid="uid://bsaea21301fco" path="res://kaynak/resim/howto/arrow-sol.png" id="6_hpna6"]
+[ext_resource type="Texture2D" uid="uid://dgpy1kqmtjj2q" path="res://kaynak/resim/howto/arrow-yukari.png" id="7_bmvvt"]
+[ext_resource type="Texture2D" uid="uid://c8ikpn0hkb811" path="res://kaynak/resim/howto/cekic.png" id="8_mhdre"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_x7bn4")
+nextlevel = "res://sahneler/bolumler/bolum1.tscn"
+
+[node name="Paralax-bg" type="Sprite2D" parent="."]
+position = Vector2(179, 89)
+texture = ExtResource("2_stafk")
+
+[node name="Dedem" type="Sprite2D" parent="Paralax-bg"]
+position = Vector2(-124, 54)
+scale = Vector2(2.3125, 2.3125)
+texture = ExtResource("3_8jjds")
+
+[node name="devam" type="Label" parent="."]
+offset_left = 88.0
+offset_top = 152.0
+offset_right = 355.0
+offset_bottom = 175.0
+text = "Devam etmek için E tuşuna bas"
+
+[node name="inter" type="Sprite2D" parent="."]
+position = Vector2(269.5, 54.5)
+scale = Vector2(0.65625, 0.65625)
+texture = ExtResource("4_e5oab")
+
+[node name="sag" type="Sprite2D" parent="."]
+position = Vector2(114, 86)
+texture = ExtResource("5_ya42b")
+
+[node name="sol" type="Sprite2D" parent="."]
+position = Vector2(82, 87)
+texture = ExtResource("6_hpna6")
+
+[node name="zipla" type="Sprite2D" parent="."]
+position = Vector2(99, 62)
+texture = ExtResource("7_bmvvt")
+
+[node name="cekic" type="Sprite2D" parent="."]
+position = Vector2(256, 89)
+scale = Vector2(2.04545, 2.35714)
+texture = ExtResource("8_mhdre")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+
+[node name="W" type="Label" parent="."]
+offset_left = 64.0
+offset_top = 24.0
+offset_right = 133.0
+offset_bottom = 47.0
+text = "W / Boşluk"
+
+[node name="A" type="Label" parent="."]
+offset_left = 58.0
+offset_top = 74.0
+offset_right = 75.0
+offset_bottom = 97.0
+text = "A"
+
+[node name="D" type="Label" parent="."]
+offset_left = 128.0
+offset_top = 74.0
+offset_right = 145.0
+offset_bottom = 97.0
+text = "D"
+
+[node name="E" type="Label" parent="."]
+offset_left = 284.0
+offset_top = 42.0
+offset_right = 301.0
+offset_bottom = 65.0
+text = "E"
+
+[node name="E2" type="Label" parent="."]
+offset_left = 186.0
+offset_top = 43.0
+offset_right = 254.0
+offset_bottom = 66.0
+text = "Etkileşim"
+
+[node name="K" type="Label" parent="."]
+offset_left = 284.0
+offset_top = 78.0
+offset_right = 301.0
+offset_bottom = 101.0
+text = "K"
+
+[node name="K2" type="Label" parent="."]
+offset_left = 184.0
+offset_top = 78.0
+offset_right = 231.0
+offset_bottom = 101.0
+text = "Saldırı"
