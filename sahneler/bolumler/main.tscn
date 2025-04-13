@@ -1,30 +1,86 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfn54cmukqgft"]
+[gd_scene load_steps=8 format=3 uid="uid://dfn54cmukqgft"]
 
 [ext_resource type="Script" uid="uid://bv4aofkv2nhm2" path="res://sahneler/bolumler/main.gd" id="1_83j65"]
+[ext_resource type="Texture2D" uid="uid://bih8qgnheuux5" path="res://kaynak/resim/cevdet-idle.png" id="2_dglvg"]
+[ext_resource type="Texture2D" uid="uid://d6phg21xc1fh" path="res://kaynak/resim/lang.png" id="3_beadw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n08rp"]
+atlas = ExtResource("2_dglvg")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggebt"]
+atlas = ExtResource("2_dglvg")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gnrxn"]
+atlas = ExtResource("2_dglvg")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xa1mq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n08rp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggebt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gnrxn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_83j65")
 
 [node name="basla" type="Button" parent="."]
-offset_left = 141.0
-offset_top = 64.0
-offset_right = 209.0
-offset_bottom = 89.0
+offset_left = 103.0
+offset_top = 41.0
+offset_right = 171.0
+offset_bottom = 72.0
 text = "basla"
 
 [node name="latin" type="Button" parent="."]
-offset_left = 66.0
-offset_top = 108.0
-offset_right = 134.0
-offset_bottom = 133.0
+offset_left = 280.0
+offset_top = 86.0
+offset_right = 349.0
+offset_bottom = 117.0
 text = "latin"
 
 [node name="orkun" type="Button" parent="."]
-offset_left = 208.0
-offset_top = 105.0
-offset_right = 276.0
-offset_bottom = 130.0
+offset_left = 279.0
+offset_top = 51.0
+offset_right = 347.0
+offset_bottom = 82.0
 text = "orkun"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 153.0
+offset_right = 113.0
+offset_bottom = 176.0
+text = "Team TöreDot"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(53, 40)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_xa1mq")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(311, 27)
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("3_beadw")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 61.0
+offset_top = 18.0
+offset_right = 177.0
+offset_bottom = 41.0
+text = "TöreDot Cevdet"
 
 [connection signal="pressed" from="basla" to="." method="_on_basla_pressed"]
 [connection signal="pressed" from="latin" to="." method="_on_latin_pressed"]
