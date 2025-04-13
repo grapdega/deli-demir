@@ -1,7 +1,7 @@
 extends Node2D
 
 var wave_timeout = 0
-var level_long = 1000
+var level_long = 1500
 
 func _ready() -> void:
 	

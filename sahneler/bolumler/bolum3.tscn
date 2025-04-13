@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://c2ko2480tl7uy"]
+[gd_scene load_steps=2 format=3 uid="uid://c2ko2480tl7uy"]
+
+[ext_resource type="Script" uid="uid://do5a78luoa23q" path="res://sahneler/bolumler/bolum_3.gd" id="1_e3e2g"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_e3e2g")
