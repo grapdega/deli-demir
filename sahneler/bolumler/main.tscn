@@ -58,10 +58,10 @@ offset_bottom = 82.0
 text = "orkun"
 
 [node name="Label" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 153.0
-offset_right = 113.0
-offset_bottom = 176.0
+offset_left = 91.0
+offset_top = 146.0
+offset_right = 196.0
+offset_bottom = 169.0
 text = "Team TöreDot"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -82,6 +82,14 @@ offset_right = 177.0
 offset_bottom = 41.0
 text = "TöreDot Cevdet"
 
+[node name="tuslar" type="Button" parent="."]
+offset_left = 17.0
+offset_top = 141.0
+offset_right = 85.0
+offset_bottom = 172.0
+text = "Tuşlar"
+
 [connection signal="pressed" from="basla" to="." method="_on_basla_pressed"]
 [connection signal="pressed" from="latin" to="." method="_on_latin_pressed"]
 [connection signal="pressed" from="orkun" to="." method="_on_orkun_pressed"]
+[connection signal="pressed" from="tuslar" to="." method="_on_basla_pressed"]
