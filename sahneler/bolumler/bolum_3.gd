@@ -11,8 +11,8 @@ var text3 = "Cevdet: Sen bir öksüz ben bir garip, alayım seni, alayım da gur
 
 
 func _ready() -> void:
-	Globals.otk = true
 	if Globals.otk:
+		$Panel/Label/devam.text = "𐰓𐰀𐰉𐰢:𐰀𐱅𐰢𐰀𐰚:𐰃𐰲𐰤:E:𐱃𐰆𐱁𐰣𐰀:𐰉𐰀𐰽"
 		text1 = "Cevdet: 𐰋𐰀𐰤:𐰋𐰃𐰼: 𐰏𐰇𐰲𐰢𐰀𐰤: 𐰶𐰃𐰔: 𐰏𐰇𐰼𐰓𐰇𐰢: 𐰶𐰞𐰀𐰺: 𐰉𐰀𐰓𐰃𐰾𐰦𐰀
 "
 		text2 = "Fedora: 𐰤𐰀: 𐰣𐰢: 𐰉𐰀𐰺: 𐰤𐰀: 𐰉𐰀𐰉𐰢: 𐰴𐰀𐰞𐰢𐰃𐱁𐰢: 𐰜𐰾𐰇𐰔

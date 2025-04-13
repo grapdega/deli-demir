@@ -182,7 +182,6 @@ position = Vector2(108, 128)
 scale = Vector2(0.2, 0.2)
 
 [node name="cicek" type="AnimatedSprite2D" parent="StaticBody2D"]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_m08di")
 autoplay = "default"
 
@@ -195,7 +194,6 @@ position = Vector2(108, 128)
 scale = Vector2(0.2, 0.2)
 
 [node name="cicek" type="AnimatedSprite2D" parent="cicek"]
-scale = Vector2(1, 1)
 sprite_frames = SubResource("SpriteFrames_m08di")
 autoplay = "default"
 
@@ -277,6 +275,13 @@ offset_right = 305.0
 offset_bottom = 115.0
 text = "Hello World"
 autowrap_mode = 2
+
+[node name="devam" type="Label" parent="Panel/Label"]
+offset_left = 41.0
+offset_top = 149.0
+offset_right = 308.0
+offset_bottom = 172.0
+text = "Devam etmek için E tuşuna bas"
 
 [node name="son" type="Label" parent="."]
 offset_left = 151.0

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="2_aitf8"]
 [ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="2_k34dp"]
 
-[node name="Main" type="Node2D"]
+[node name="Main2" type="Node2D"]
 script = ExtResource("1_a1frp")
 nextlevel = "res://sahneler/bolumler/bolum1.tscn"
 
