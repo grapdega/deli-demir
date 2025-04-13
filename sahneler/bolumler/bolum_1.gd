@@ -67,8 +67,7 @@ func _process(delta: float) -> void:
 		
 	if fire > 100:
 		fire = 100
-	
 
 
 func _on_sonrakibolum_body_entered(body: Node2D) -> void:
-	get_tree().change_scene_to_file("res://sahneler/bolumler/bolum2.tscn") # Replace with function body.
+	get_tree().change_scene_to_file("res://sahneler/aralevel/kağnı.tscn") # Replace with function body.

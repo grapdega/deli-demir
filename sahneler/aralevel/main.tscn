@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://bbjn6vlqnvr2a"]
+
+[ext_resource type="Script" uid="uid://dbdty3th3bv3s" path="res://sahneler/aralevel/aralevel.gd" id="1_a1frp"]
+[ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="2_aitf8"]
+[ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="2_k34dp"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_a1frp")
+nextlevel = "res://sahneler/bolumler/bolum1.tscn"
+
+[node name="Paralax-bg" type="Sprite2D" parent="."]
+position = Vector2(179, 89)
+texture = ExtResource("2_k34dp")
+
+[node name="Dedem" type="Sprite2D" parent="Paralax-bg"]
+position = Vector2(-124, 54)
+scale = Vector2(2.3125, 2.3125)
+texture = ExtResource("2_aitf8")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 91.0
+offset_top = 20.0
+offset_right = 333.0
+offset_bottom = 128.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 240.0
+offset_bottom = 105.0
+text = "Buradan çıkmamız için dağı delmemiz lazım.
+Ateşe kömür atıp dağı tıkayan kayayı parçala. Acele et!"
+autowrap_mode = 2
+
+[node name="devam" type="Label" parent="."]
+offset_left = 124.0
+offset_top = 152.0
+offset_right = 358.0
+offset_bottom = 175.0
+text = "Devam etmek için E tuşuna bas"

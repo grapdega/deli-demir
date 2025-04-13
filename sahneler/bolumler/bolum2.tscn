@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c2kn8ig5g0cf2"]
+[gd_scene load_steps=13 format=3 uid="uid://c2kn8ig5g0cf2"]
 
 [ext_resource type="Script" uid="uid://8g5k6yvg8j6a" path="res://sahneler/bolumler/bolum_2.gd" id="1_jied2"]
 [ext_resource type="PackedScene" uid="uid://ciebyc4dfwf7a" path="res://sahneler/karakter/ateş.tscn" id="2_mf05u"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c5e1dwdc82vip" path="res://sahneler/karakter/kagni.tscn" id="7_li4hg"]
 [ext_resource type="Texture2D" uid="uid://hynb5nyqnayd" path="res://kaynak/resim/paralax/paralax-gokyuzu.png" id="8_ckjfr"]
 [ext_resource type="Texture2D" uid="uid://c3kkilyru181g" path="res://kaynak/resim/cimen.png" id="9_cq652"]
+[ext_resource type="PackedScene" uid="uid://l4ya4nar8y0m" path="res://sahneler/karakter/tabela.tscn" id="11_svr6w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r1yuk"]
 size = Vector2(369, 20)
@@ -91,3 +92,5 @@ metadata/_edit_use_anchors_ = true
 
 [node name="kağnı" parent="." instance=ExtResource("7_li4hg")]
 position = Vector2(184, 119)
+
+[node name="tabela" parent="." instance=ExtResource("11_svr6w")]

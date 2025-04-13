@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1f8vs0ce8go0"]
+
+[ext_resource type="Script" uid="uid://cjq7s6f7prho5" path="res://sahneler/aralevel/kağnı.gd" id="1_ee1a4"]
+[ext_resource type="Texture2D" uid="uid://b6k5hflytaulp" path="res://kaynak/resim/paralax/paralax-bg.png" id="2_k06bo"]
+[ext_resource type="Texture2D" uid="uid://cbef48ml7ikj0" path="res://kaynak/resim/dedem.png" id="3_uaa0f"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_ee1a4")
+nextlevel = "res://sahneler/bolumler/bolum2.tscn"
+
+[node name="Paralax-bg" type="Sprite2D" parent="."]
+position = Vector2(179, 89)
+texture = ExtResource("2_k06bo")
+
+[node name="Dedem" type="Sprite2D" parent="Paralax-bg"]
+position = Vector2(-124, 54)
+scale = Vector2(2.3125, 2.3125)
+texture = ExtResource("3_uaa0f")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = 91.0
+offset_top = 20.0
+offset_right = 333.0
+offset_bottom = 128.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 2.0
+offset_right = 240.0
+offset_bottom = 105.0
+text = "Vadiye ulaşana kadar kağnıyı koruman gerek
+Gelen düşmanlara karşı Uyarık ol"
+autowrap_mode = 2
+
+[node name="devam" type="Label" parent="."]
+offset_left = 124.0
+offset_top = 152.0
+offset_right = 358.0
+offset_bottom = 175.0
+text = "Devam etmek için E tuşuna bas"

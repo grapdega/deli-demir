@@ -1,8 +1,17 @@
 extends Node2D
 
 var wave_timeout = 0
-var level_long = 2500
+var level_long = 1000
 
+func _ready() -> void:
+	
+	$tabela.global_position.x = level_long - 100
+	$tabela.global_position.y = $"kağnı".global_position.y
+	if Globals.otk:
+		$tabela/Label.text = "𐰀𐰴𐰽𐰀𐰺𐰖"
+	else:
+		$tabela/Label.text = "Aksaray"
+	
 func _process(delta: float) -> void:
 	$zemin.global_position.x = $Oyuncu.global_position.x
 	$Oyuncu/kamera.limit_bottom = 238

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://l4ya4nar8y0m"]
+
+[ext_resource type="Texture2D" uid="uid://huj8q8xw53q3" path="res://kaynak/resim/tabela.png" id="1_00ids"]
+
+[node name="tabela" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_00ids")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -18.0
+offset_top = -14.0
+offset_right = 15.0
+offset_bottom = -1.0
+theme_override_font_sizes/font_size = 9
+text = "Aksaray"
